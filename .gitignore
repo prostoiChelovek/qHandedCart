@@ -1,0 +1,19 @@
+# Ignore list for KiCAD Projects https://medium.com/inventhub/better-manage-kicad-projects-using-git-8d06e1310af8
+
+# Temporary files
+/hardware/**/*.000
+/hardware/**/*.bak
+/hardware/**/*.bck
+/hardware/**/*.kicad_pcb-bak
+/hardware/**/*.sch-bak
+/hardware/**/*~
+/hardware/**/_autosave-*
+/hardware/**/*.tmp
+/hardware/**/*-save.pro
+/hardware/**/*-save.kicad_pcb
+/hardware/**/fp-info-cache
+# Netlist files (exported from Eeschema)
+/hardware/**/*.net
+# Autorouter files (exported from Pcbnew)
+/hardware/**/*.dsn
+/hardware/**/*.ses

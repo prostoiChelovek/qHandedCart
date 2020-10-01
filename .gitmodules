@@ -1,0 +1,3 @@
+[submodule "hardware/libs/arduino-kicad-library"]
+	path = hardware/libs/arduino-kicad-library
+	url = https://github.com/Alarm-Siren/arduino-kicad-library
