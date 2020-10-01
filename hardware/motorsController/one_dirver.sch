@@ -1,0 +1,218 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 2 2
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L Driver_Motor:VNH5019A-E U?
+U 1 1 5F75DD74
+P 3150 2750
+F 0 "U?" H 3150 3531 50  0000 C CNN
+F 1 "VNH5019A-E" H 3150 3440 50  0000 C CNN
+F 2 "Package_SO:ST_MultiPowerSO-30" H 4050 2200 50  0001 C CNN
+F 3 "https://www.st.com/resource/en/datasheet/vnh5019a-e.pdf" H 2700 3600 50  0001 C CNN
+	1    3150 2750
+	1    0    0    -1  
+$EndComp
+Text HLabel 3650 2650 2    50   Output ~ 0
+out_a
+Text HLabel 3650 2850 2    50   Output ~ 0
+out_b
+Wire Wire Line
+	3150 3350 3250 3350
+Wire Wire Line
+	3250 3350 3250 3500
+Connection ~ 3250 3350
+Wire Wire Line
+	3250 3350 3350 3350
+$Comp
+L Device:R R?
+U 1 1 5F764A13
+P 2500 2350
+F 0 "R?" V 2293 2350 50  0000 C CNN
+F 1 "1K" V 2384 2350 50  0000 C CNN
+F 2 "" V 2430 2350 50  0001 C CNN
+F 3 "~" H 2500 2350 50  0001 C CNN
+	1    2500 2350
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 5F765406
+P 2500 2450
+F 0 "R?" V 2293 2450 50  0001 C CNN
+F 1 "1K" V 2384 2450 50  0001 C CNN
+F 2 "" V 2430 2450 50  0001 C CNN
+F 3 "~" H 2500 2450 50  0001 C CNN
+	1    2500 2450
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 5F7658F2
+P 2500 2550
+F 0 "R?" V 2293 2550 50  0001 C CNN
+F 1 "1K" V 2384 2550 50  0001 C CNN
+F 2 "" V 2430 2550 50  0001 C CNN
+F 3 "~" H 2500 2550 50  0001 C CNN
+	1    2500 2550
+	0    1    1    0   
+$EndComp
+Text HLabel 2350 2350 0    50   Input ~ 0
+fwd
+Text HLabel 2350 2450 0    50   Input ~ 0
+back
+Text HLabel 2350 2550 0    50   Input ~ 0
+pwm
+$Comp
+L Device:R R?
+U 1 1 5F77E0ED
+P 2500 2750
+F 0 "R?" V 2293 2750 50  0001 C CNN
+F 1 "1K" V 2384 2750 50  0001 C CNN
+F 2 "" V 2430 2750 50  0001 C CNN
+F 3 "~" H 2500 2750 50  0001 C CNN
+	1    2500 2750
+	0    1    1    0   
+$EndComp
+Text HLabel 2350 2750 0    50   Output ~ 0
+diag_a
+$Comp
+L Device:R R?
+U 1 1 5F781639
+P 2500 2850
+F 0 "R?" V 2293 2850 50  0001 C CNN
+F 1 "1K" V 2384 2850 50  0001 C CNN
+F 2 "" V 2430 2850 50  0001 C CNN
+F 3 "~" H 2500 2850 50  0001 C CNN
+	1    2500 2850
+	0    1    1    0   
+$EndComp
+Text HLabel 2350 2850 0    50   Output ~ 0
+diag_b
+$Comp
+L power:GND #PWR?
+U 1 1 5F781B76
+P 2350 3100
+F 0 "#PWR?" H 2350 2850 50  0001 C CNN
+F 1 "GND" H 2355 2927 50  0000 C CNN
+F 2 "" H 2350 3100 50  0001 C CNN
+F 3 "" H 2350 3100 50  0001 C CNN
+	1    2350 3100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2350 3100 2350 3050
+Wire Wire Line
+	2350 3050 2650 3050
+$Comp
+L Device:R R?
+U 1 1 5F782890
+P 2000 3750
+F 0 "R?" H 2070 3796 50  0000 L CNN
+F 1 "1.5K" H 2070 3705 50  0000 L CNN
+F 2 "" V 1930 3750 50  0001 C CNN
+F 3 "~" H 2000 3750 50  0001 C CNN
+	1    2000 3750
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5F783B44
+P 1700 4050
+F 0 "#PWR?" H 1700 3800 50  0001 C CNN
+F 1 "GND" H 1705 3877 50  0000 C CNN
+F 2 "" H 1700 4050 50  0001 C CNN
+F 3 "" H 1700 4050 50  0001 C CNN
+	1    1700 4050
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 5F7841BA
+P 1700 3600
+F 0 "R?" V 1493 3600 50  0000 C CNN
+F 1 "10K" V 1584 3600 50  0000 C CNN
+F 2 "" V 1630 3600 50  0001 C CNN
+F 3 "~" H 1700 3600 50  0001 C CNN
+	1    1700 3600
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	1850 3600 2000 3600
+Connection ~ 2000 3600
+$Comp
+L Device:C C?
+U 1 1 5F784D90
+P 1400 3750
+F 0 "C?" H 1515 3796 50  0000 L CNN
+F 1 "33nF" H 1515 3705 50  0000 L CNN
+F 2 "" H 1438 3600 50  0001 C CNN
+F 3 "~" H 1400 3750 50  0001 C CNN
+	1    1400 3750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1550 3600 1400 3600
+Wire Wire Line
+	1400 3900 1400 3950
+Wire Wire Line
+	1400 3950 1700 3950
+Wire Wire Line
+	2000 3950 2000 3900
+Wire Wire Line
+	1700 4050 1700 3950
+Connection ~ 1700 3950
+Wire Wire Line
+	1700 3950 2000 3950
+Wire Wire Line
+	1400 3600 1250 3600
+Connection ~ 1400 3600
+Text HLabel 1250 3600 0    50   Output ~ 0
+cs
+NoConn ~ 3650 2350
+Wire Wire Line
+	3150 2150 3150 1850
+Text HLabel 3150 1850 1    50   Input ~ 0
+bat
+$Comp
+L power:+5V #PWR?
+U 1 1 5F78A1BC
+P 3350 1850
+F 0 "#PWR?" H 3350 1700 50  0001 C CNN
+F 1 "+5V" H 3365 2023 50  0000 C CNN
+F 2 "" H 3350 1850 50  0001 C CNN
+F 3 "" H 3350 1850 50  0001 C CNN
+	1    3350 1850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3350 1850 3350 2150
+Wire Wire Line
+	2500 3600 2500 3150
+Wire Wire Line
+	2500 3150 2650 3150
+Wire Wire Line
+	2000 3600 2500 3600
+$Comp
+L power:GND #PWR?
+U 1 1 5F794080
+P 3250 3500
+F 0 "#PWR?" H 3250 3250 50  0001 C CNN
+F 1 "GND" H 3255 3327 50  0000 C CNN
+F 2 "" H 3250 3500 50  0001 C CNN
+F 3 "" H 3250 3500 50  0001 C CNN
+	1    3250 3500
+	1    0    0    -1  
+$EndComp
+$EndSCHEMATC
