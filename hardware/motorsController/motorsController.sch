@@ -1,7 +1,7 @@
 EESchema Schematic File Version 4
 EELAYER 30 0
 EELAYER END
-$Descr A4 11693 8268
+$Descr A3 16535 11693
 encoding utf-8
 Sheet 1 2
 Title ""
@@ -28,27 +28,138 @@ F8 "diag_b" O R 4000 2300 50
 F9 "cs" O R 4000 2200 50 
 F10 "bat" I R 4000 3150 50 
 $EndSheet
+Text HLabel 4000 2550 2    50   Input ~ 0
+motor_right_front_pwm
 $Comp
-L Motor:Motor_DC M?
+L Motor:Motor_DC M1
 U 1 1 5F794D70
-P 5000 3050
-F 0 "M?" H 4842 2954 50  0000 R CNN
-F 1 "Motor_DC" H 4842 3045 50  0000 R CNN
-F 2 "" H 5000 2960 50  0001 C CNN
-F 3 "~" H 5000 2960 50  0001 C CNN
-	1    5000 3050
-	-1   0    0    1   
+P 4500 2950
+F 0 "M1" H 4342 2854 50  0000 R CNN
+F 1 "Motor_DC" H 4342 2945 50  0000 R CNN
+F 2 "TerminalBlock:TerminalBlock_bornier-2_P5.08mm" H 4500 2860 50  0001 C CNN
+F 3 "~" H 4500 2860 50  0001 C CNN
+	1    4500 2950
+	0    -1   -1   0   
 $EndComp
 Wire Wire Line
-	5000 2750 4550 2750
+	4300 2950 4000 2950
 Wire Wire Line
-	4550 2750 4550 2950
+	4800 2950 4800 3100
 Wire Wire Line
-	4550 2950 4000 2950
+	4800 3100 4300 3100
 Wire Wire Line
-	5000 3250 4550 3250
+	4300 3100 4300 3050
 Wire Wire Line
-	4550 3250 4550 3050
+	4300 3050 4000 3050
+Text HLabel 4000 2650 2    50   Input ~ 0
+motor_right_front_back
+Text HLabel 4000 2750 2    50   Input ~ 0
+motor_right_front_fwd
+Text HLabel 4000 2200 2    50   Output ~ 0
+motor_right_front_cs
+Text HLabel 4000 2300 2    50   Output ~ 0
+motor_right_front_diag_b
+Text HLabel 4000 2400 2    50   Output ~ 0
+motor_right_front_diag_a
+Text HLabel 9550 1250 2    50   Output ~ 0
+motor_right_front_pwm
+Text HLabel 9550 2450 2    50   Output ~ 0
+motor_right_front_back
+Text HLabel 9550 2550 2    50   Output ~ 0
+motor_right_front_fwd
+Text HLabel 6950 2950 0    50   Input ~ 0
+motor_right_front_cs
+Text HLabel 9550 3350 2    50   Input ~ 0
+motor_right_front_diag_b
+Text HLabel 9550 3250 2    50   Input ~ 0
+motor_right_front_diag_a
+$Comp
+L power:GND #PWR0105
+U 1 1 5F7FA8F7
+P 6650 5100
+F 0 "#PWR0105" H 6650 4850 50  0001 C CNN
+F 1 "GND" H 6655 4927 50  0000 C CNN
+F 2 "" H 6650 5100 50  0001 C CNN
+F 3 "" H 6650 5100 50  0001 C CNN
+	1    6650 5100
+	1    0    0    -1  
+$EndComp
 Wire Wire Line
-	4550 3050 4000 3050
+	6650 5100 6650 5050
+Wire Wire Line
+	6650 5050 6950 5050
+$Comp
+L power:+5V #PWR0106
+U 1 1 5F7FCF51
+P 6400 5350
+F 0 "#PWR0106" H 6400 5200 50  0001 C CNN
+F 1 "+5V" H 6415 5523 50  0000 C CNN
+F 2 "" H 6400 5350 50  0001 C CNN
+F 3 "" H 6400 5350 50  0001 C CNN
+	1    6400 5350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6400 5350 6400 5450
+Wire Wire Line
+	6400 5450 6950 5450
+$Comp
+L Connector:Screw_Terminal_01x02 J1
+U 1 1 5F7F2610
+P 1350 4200
+F 0 "J1" H 1268 3875 50  0000 C CNN
+F 1 "batery_connector" H 1268 3966 50  0000 C CNN
+F 2 "TerminalBlock:TerminalBlock_bornier-2_P5.08mm" H 1350 4200 50  0001 C CNN
+F 3 "~" H 1350 4200 50  0001 C CNN
+	1    1350 4200
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:GND #PWR0107
+U 1 1 5F7F3543
+P 1700 4250
+F 0 "#PWR0107" H 1700 4000 50  0001 C CNN
+F 1 "GND" H 1705 4077 50  0000 C CNN
+F 2 "" H 1700 4250 50  0001 C CNN
+F 3 "" H 1700 4250 50  0001 C CNN
+	1    1700 4250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1700 4250 1700 4200
+Wire Wire Line
+	1700 4200 1550 4200
+Text HLabel 1550 4100 2    50   Output ~ 0
+bat+
+Text HLabel 4000 3150 2    50   Input ~ 0
+bat+
+$Comp
+L arduino:Arduino_Due_Shield XA1
+U 1 1 5F7F0EA5
+P 8250 3400
+F 0 "XA1" H 8250 1019 60  0000 C CNN
+F 1 "Arduino_Due_Shield" H 8250 913 60  0000 C CNN
+F 2 "Arduino:Arduino_Due_Shield" H 8950 6150 60  0001 C CNN
+F 3 "https://store.arduino.cc/arduino-due" H 8950 6150 60  0001 C CNN
+	1    8250 3400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6950 5450 6950 5350
+Connection ~ 6950 5450
+Connection ~ 6950 5350
+Wire Wire Line
+	6950 5350 6950 5250
+Wire Wire Line
+	6950 5050 6950 4950
+Connection ~ 6950 5050
+Connection ~ 6950 4750
+Wire Wire Line
+	6950 4750 6950 4650
+Connection ~ 6950 4850
+Wire Wire Line
+	6950 4850 6950 4750
+Connection ~ 6950 4950
+Wire Wire Line
+	6950 4950 6950 4850
 $EndSCHEMATC
