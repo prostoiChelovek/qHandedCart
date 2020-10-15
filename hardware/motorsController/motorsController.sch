@@ -30,25 +30,8 @@ F10 "bat" I R 4000 3150 50
 $EndSheet
 Text HLabel 4000 2550 2    50   Input ~ 0
 motor_right_front_pwm
-$Comp
-L Motor:Motor_DC M1
-U 1 1 5F794D70
-P 4500 2950
-F 0 "M1" H 4342 2854 50  0000 R CNN
-F 1 "Motor_DC" H 4342 2945 50  0000 R CNN
-F 2 "TerminalBlock:TerminalBlock_bornier-2_P5.08mm" H 4500 2860 50  0001 C CNN
-F 3 "~" H 4500 2860 50  0001 C CNN
-	1    4500 2950
-	0    -1   -1   0   
-$EndComp
 Wire Wire Line
 	4300 2950 4000 2950
-Wire Wire Line
-	4800 2950 4800 3100
-Wire Wire Line
-	4800 3100 4300 3100
-Wire Wire Line
-	4300 3100 4300 3050
 Wire Wire Line
 	4300 3050 4000 3050
 Text HLabel 4000 2650 2    50   Input ~ 0
@@ -162,4 +145,26 @@ Wire Wire Line
 Connection ~ 6950 4950
 Wire Wire Line
 	6950 4950 6950 4850
+$Comp
+L Connector:Screw_Terminal_01x01 J2
+U 1 1 5F88908C
+P 4500 2950
+F 0 "J2" H 4580 2992 50  0000 L CNN
+F 1 "Screw_Terminal_01x01" H 4580 2901 50  0000 L CNN
+F 2 "Connector_Pin:Pin_D1.3mm_L11.3mm_W2.8mm_Flat" H 4500 2950 50  0001 C CNN
+F 3 "~" H 4500 2950 50  0001 C CNN
+	1    4500 2950
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:Screw_Terminal_01x01 J3
+U 1 1 5F88A28E
+P 4500 3050
+F 0 "J3" H 4580 3092 50  0000 L CNN
+F 1 "Screw_Terminal_01x01" H 4580 3001 50  0000 L CNN
+F 2 "Connector_Pin:Pin_D1.3mm_L11.3mm_W2.8mm_Flat" H 4500 3050 50  0001 C CNN
+F 3 "~" H 4500 3050 50  0001 C CNN
+	1    4500 3050
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
