@@ -54,7 +54,7 @@ Text HLabel 12000 3050 0    50   Input ~ 0
 motor_right_front_cs
 Text HLabel 14600 3450 2    50   Input ~ 0
 motor_right_front_diag_b
-Text HLabel 14600 3350 2    50   Input ~ 0
+Text HLabel 15700 3250 2    50   Input ~ 0
 motor_right_front_diag_a
 $Comp
 L power:GND #PWR0105
@@ -342,9 +342,7 @@ Text HLabel 15750 2700 2    50   Output ~ 0
 motor_left_front_back
 Text HLabel 14600 2850 2    50   Output ~ 0
 motor_left_front_fwd
-Text HLabel 14600 3250 2    50   Output ~ 0
-motor_right_rear_back
-Text HLabel 14600 3050 2    50   Output ~ 0
+Text HLabel 14600 3950 2    50   Output ~ 0
 motor_right_rear_fwd
 Text HLabel 14600 2550 2    50   Output ~ 0
 motor_left_rear_back
@@ -352,9 +350,9 @@ Text HLabel 14600 3150 2    50   Output ~ 0
 motor_left_rear_fwd
 Text HLabel 14600 3650 2    50   Input ~ 0
 motor_left_front_diag_b
-Text HLabel 14600 3550 2    50   Input ~ 0
+Text HLabel 15650 3800 2    50   Input ~ 0
 motor_left_front_diag_a
-Text HLabel 14600 3850 2    50   Input ~ 0
+Text HLabel 14600 3550 2    50   Input ~ 0
 motor_right_rear_diag_b
 Text HLabel 14600 3750 2    50   Input ~ 0
 motor_right_rear_diag_a
@@ -402,4 +400,6 @@ Text HLabel 14600 2750 2    50   Input ~ 0
 motor_left_rear_diag_b
 Text HLabel 14600 2950 2    50   Input ~ 0
 motor_left_rear_diag_a
+Text HLabel 14600 3350 2    50   Output ~ 0
+motor_right_rear_back
 $EndSCHEMATC
