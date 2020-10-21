@@ -201,10 +201,10 @@ motor_left_front_diag_a
 Text HLabel 8650 3150 2    50   Input ~ 0
 bat+
 $Comp
-L Connector:Screw_Terminal_01x01 J6
+L Connector:Screw_Terminal_01x01 J?
 U 1 1 5F8AE612
 P 9150 2950
-F 0 "J6" H 9230 2992 50  0000 L CNN
+F 0 "J?" H 9230 2992 50  0000 L CNN
 F 1 "Screw_Terminal_01x01" H 9230 2901 50  0000 L CNN
 F 2 "Connector_Pin:Pin_D1.3mm_L11.3mm_W2.8mm_Flat" H 9150 2950 50  0001 C CNN
 F 3 "~" H 9150 2950 50  0001 C CNN
@@ -212,10 +212,10 @@ F 3 "~" H 9150 2950 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Connector:Screw_Terminal_01x01 J7
+L Connector:Screw_Terminal_01x01 J?
 U 1 1 5F8AE618
 P 9150 3050
-F 0 "J7" H 9230 3092 50  0000 L CNN
+F 0 "J?" H 9230 3092 50  0000 L CNN
 F 1 "Screw_Terminal_01x01" H 9230 3001 50  0000 L CNN
 F 2 "Connector_Pin:Pin_D1.3mm_L11.3mm_W2.8mm_Flat" H 9150 3050 50  0001 C CNN
 F 3 "~" H 9150 3050 50  0001 C CNN
@@ -254,10 +254,10 @@ motor_right_rear_diag_a
 Text HLabel 4000 5600 2    50   Input ~ 0
 bat+
 $Comp
-L Connector:Screw_Terminal_01x01 J4
+L Connector:Screw_Terminal_01x01 J?
 U 1 1 5F8B7970
 P 4500 5400
-F 0 "J4" H 4580 5442 50  0000 L CNN
+F 0 "J?" H 4580 5442 50  0000 L CNN
 F 1 "Screw_Terminal_01x01" H 4580 5351 50  0000 L CNN
 F 2 "Connector_Pin:Pin_D1.3mm_L11.3mm_W2.8mm_Flat" H 4500 5400 50  0001 C CNN
 F 3 "~" H 4500 5400 50  0001 C CNN
@@ -265,10 +265,10 @@ F 3 "~" H 4500 5400 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Connector:Screw_Terminal_01x01 J5
+L Connector:Screw_Terminal_01x01 J?
 U 1 1 5F8B7976
 P 4500 5500
-F 0 "J5" H 4580 5542 50  0000 L CNN
+F 0 "J?" H 4580 5542 50  0000 L CNN
 F 1 "Screw_Terminal_01x01" H 4580 5451 50  0000 L CNN
 F 2 "Connector_Pin:Pin_D1.3mm_L11.3mm_W2.8mm_Flat" H 4500 5500 50  0001 C CNN
 F 3 "~" H 4500 5500 50  0001 C CNN
@@ -309,10 +309,10 @@ motor_left_rear_diag_a
 Text HLabel 8650 5600 2    50   Input ~ 0
 bat+
 $Comp
-L Connector:Screw_Terminal_01x01 J8
+L Connector:Screw_Terminal_01x01 J?
 U 1 1 5F8B7990
 P 9150 5400
-F 0 "J8" H 9230 5442 50  0000 L CNN
+F 0 "J?" H 9230 5442 50  0000 L CNN
 F 1 "Screw_Terminal_01x01" H 9230 5351 50  0000 L CNN
 F 2 "Connector_Pin:Pin_D1.3mm_L11.3mm_W2.8mm_Flat" H 9150 5400 50  0001 C CNN
 F 3 "~" H 9150 5400 50  0001 C CNN
@@ -320,10 +320,10 @@ F 3 "~" H 9150 5400 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Connector:Screw_Terminal_01x01 J9
+L Connector:Screw_Terminal_01x01 J?
 U 1 1 5F8B7996
 P 9150 5500
-F 0 "J9" H 9230 5542 50  0000 L CNN
+F 0 "J?" H 9230 5542 50  0000 L CNN
 F 1 "Screw_Terminal_01x01" H 9230 5451 50  0000 L CNN
 F 2 "Connector_Pin:Pin_D1.3mm_L11.3mm_W2.8mm_Flat" H 9150 5500 50  0001 C CNN
 F 3 "~" H 9150 5500 50  0001 C CNN
