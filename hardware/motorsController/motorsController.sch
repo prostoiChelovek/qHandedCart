@@ -46,7 +46,7 @@ Text HLabel 4000 2400 2    50   Output ~ 0
 motor_right_front_diag_a
 Text HLabel 14600 1350 2    50   Output ~ 0
 motor_right_front_pwm
-Text HLabel 14600 2550 2    50   Output ~ 0
+Text HLabel 15700 2600 2    50   Output ~ 0
 motor_right_front_back
 Text HLabel 14600 2650 2    50   Output ~ 0
 motor_right_front_fwd
@@ -338,17 +338,17 @@ Text HLabel 12000 3250 0    50   Input ~ 0
 motor_right_rear_cs
 Text HLabel 12000 3350 0    50   Input ~ 0
 motor_left_rear_cs
-Text HLabel 14600 2750 2    50   Output ~ 0
+Text HLabel 15750 2700 2    50   Output ~ 0
 motor_left_front_back
 Text HLabel 14600 2850 2    50   Output ~ 0
 motor_left_front_fwd
-Text HLabel 14600 2950 2    50   Output ~ 0
+Text HLabel 14600 3250 2    50   Output ~ 0
 motor_right_rear_back
 Text HLabel 14600 3050 2    50   Output ~ 0
 motor_right_rear_fwd
-Text HLabel 14600 3150 2    50   Output ~ 0
+Text HLabel 14600 2550 2    50   Output ~ 0
 motor_left_rear_back
-Text HLabel 14600 3250 2    50   Output ~ 0
+Text HLabel 14600 3150 2    50   Output ~ 0
 motor_left_rear_fwd
 Text HLabel 14600 3650 2    50   Input ~ 0
 motor_left_front_diag_b
@@ -358,10 +358,6 @@ Text HLabel 14600 3850 2    50   Input ~ 0
 motor_right_rear_diag_b
 Text HLabel 14600 3750 2    50   Input ~ 0
 motor_right_rear_diag_a
-Text HLabel 14600 4050 2    50   Input ~ 0
-motor_left_rear_diag_b
-Text HLabel 14600 3950 2    50   Input ~ 0
-motor_left_rear_diag_a
 Text HLabel 14600 1450 2    50   Output ~ 0
 motor_left_front_pwm
 Text HLabel 14600 1550 2    50   Output ~ 0
@@ -402,4 +398,8 @@ NoConn ~ 13250 900
 NoConn ~ 13350 900 
 NoConn ~ 13450 900 
 NoConn ~ 13550 900 
+Text HLabel 14600 2750 2    50   Input ~ 0
+motor_left_rear_diag_b
+Text HLabel 14600 2950 2    50   Input ~ 0
+motor_left_rear_diag_a
 $EndSCHEMATC
