@@ -113,9 +113,9 @@ Wire Wire Line
 Wire Wire Line
 	1350 10650 1200 10650
 Text HLabel 1200 10550 2    50   Output ~ 0
-bat+
+bat_front+
 Text HLabel 4000 3150 2    50   Input ~ 0
-bat+
+bat_front+
 $Comp
 L arduino:Arduino_Due_Shield XA1
 U 1 1 5F7F0EA5
@@ -199,7 +199,7 @@ motor_left_front_diag_b
 Text HLabel 8650 2400 2    50   Output ~ 0
 motor_left_front_diag_a
 Text HLabel 8650 3150 2    50   Input ~ 0
-bat+
+bat_front+
 $Comp
 L Connector:Screw_Terminal_01x01 J6
 U 1 1 5F8AE612
@@ -252,7 +252,7 @@ motor_right_rear_cs
 Text HLabel 4000 4850 2    50   Output ~ 0
 motor_right_rear_diag_a
 Text HLabel 4000 5600 2    50   Input ~ 0
-bat+
+bat_rear+
 $Comp
 L Connector:Screw_Terminal_01x01 J4
 U 1 1 5F8B7970
@@ -307,7 +307,7 @@ motor_left_rear_diag_b
 Text HLabel 8650 4850 2    50   Output ~ 0
 motor_left_rear_diag_a
 Text HLabel 8650 5600 2    50   Input ~ 0
-bat+
+bat_rear+
 $Comp
 L Connector:Screw_Terminal_01x01 J8
 U 1 1 5F8B7990
@@ -368,4 +368,38 @@ Text HLabel 14600 1550 2    50   Output ~ 0
 motor_right_rear_pwm
 Text HLabel 14600 1650 2    50   Output ~ 0
 motor_left_rear_pwm
+$Comp
+L Connector:Screw_Terminal_01x02 J10
+U 1 1 5F8FE7B8
+P 1850 10650
+F 0 "J10" H 1768 10325 50  0000 C CNN
+F 1 "batery_connector" H 1768 10416 50  0000 C CNN
+F 2 "TerminalBlock:TerminalBlock_bornier-2_P5.08mm" H 1850 10650 50  0001 C CNN
+F 3 "~" H 1850 10650 50  0001 C CNN
+	1    1850 10650
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:GND #PWR0120
+U 1 1 5F8FE7BE
+P 2200 10700
+F 0 "#PWR0120" H 2200 10450 50  0001 C CNN
+F 1 "GND" H 2205 10527 50  0000 C CNN
+F 2 "" H 2200 10700 50  0001 C CNN
+F 3 "" H 2200 10700 50  0001 C CNN
+	1    2200 10700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2200 10700 2200 10650
+Wire Wire Line
+	2200 10650 2050 10650
+Text HLabel 2050 10550 2    50   Output ~ 0
+bat_rear+
+NoConn ~ 13050 900 
+NoConn ~ 13150 900 
+NoConn ~ 13250 900 
+NoConn ~ 13350 900 
+NoConn ~ 13450 900 
+NoConn ~ 13550 900 
 $EndSCHEMATC
