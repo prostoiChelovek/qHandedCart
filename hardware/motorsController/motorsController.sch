@@ -46,15 +46,15 @@ Text HLabel 4000 2400 2    50   Output ~ 0
 motor_right_front_diag_a
 Text HLabel 14600 1650 2    50   Output ~ 0
 motor_right_front_pwm
-Text HLabel 15700 2600 2    50   Output ~ 0
+Text HLabel 14600 2450 2    50   Output ~ 0
 motor_right_front_back
-Text HLabel 14600 2650 2    50   Output ~ 0
+Text HLabel 14600 2150 2    50   Output ~ 0
 motor_right_front_fwd
 Text HLabel 12000 3050 0    50   Input ~ 0
 motor_right_front_cs
-Text HLabel 14600 3450 2    50   Input ~ 0
+Text HLabel 14600 2350 2    50   Input ~ 0
 motor_right_front_diag_b
-Text HLabel 15700 3250 2    50   Input ~ 0
+Text HLabel 14600 2250 2    50   Input ~ 0
 motor_right_front_diag_a
 $Comp
 L power:GND #PWR0105
