@@ -46,15 +46,15 @@ Text HLabel 4000 2400 2    50   Output ~ 0
 motor_right_front_diag_a
 Text HLabel 14600 1650 2    50   Output ~ 0
 motor_right_front_pwm
-Text HLabel 15700 2600 2    50   Output ~ 0
+Text HLabel 14600 2450 2    50   Output ~ 0
 motor_right_front_back
-Text HLabel 14600 2650 2    50   Output ~ 0
+Text HLabel 14600 2150 2    50   Output ~ 0
 motor_right_front_fwd
 Text HLabel 12000 3050 0    50   Input ~ 0
 motor_right_front_cs
-Text HLabel 14600 3450 2    50   Input ~ 0
+Text HLabel 14600 2350 2    50   Input ~ 0
 motor_right_front_diag_b
-Text HLabel 15700 3250 2    50   Input ~ 0
+Text HLabel 14600 2250 2    50   Input ~ 0
 motor_right_front_diag_a
 $Comp
 L power:GND #PWR0105
@@ -402,4 +402,53 @@ Text HLabel 14600 1750 2    50   Output ~ 0
 motor_left_front_fwd
 Text HLabel 14600 2050 2    50   Output ~ 0
 motor_left_front_back
+Text GLabel 1200 9700 2    50   Input ~ 0
+i2c_scl
+Text GLabel 1200 9600 2    50   Input ~ 0
+i2c_sda
+$Comp
+L power:+5V #PWR?
+U 1 1 5FAD9AB3
+P 1450 9450
+F 0 "#PWR?" H 1450 9300 50  0001 C CNN
+F 1 "+5V" H 1465 9623 50  0000 C CNN
+F 2 "" H 1450 9450 50  0001 C CNN
+F 3 "" H 1450 9450 50  0001 C CNN
+	1    1450 9450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1450 9450 1450 9500
+Wire Wire Line
+	1450 9500 1200 9500
+$Comp
+L power:GND #PWR?
+U 1 1 5FADB6FB
+P 1450 9850
+F 0 "#PWR?" H 1450 9600 50  0001 C CNN
+F 1 "GND" H 1455 9677 50  0000 C CNN
+F 2 "" H 1450 9850 50  0001 C CNN
+F 3 "" H 1450 9850 50  0001 C CNN
+	1    1450 9850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1450 9850 1450 9800
+Wire Wire Line
+	1450 9800 1200 9800
+Text GLabel 12000 2150 0    50   Output ~ 0
+i2c_scl
+Text GLabel 12000 2250 0    50   Output ~ 0
+i2c_sda
+$Comp
+L Connector_Generic:Conn_01x04 J?
+U 1 1 5FAD5301
+P 1000 9700
+F 0 "J?" H 918 9275 50  0000 C CNN
+F 1 "Conn_01x04" H 918 9366 50  0000 C CNN
+F 2 "" H 1000 9700 50  0001 C CNN
+F 3 "~" H 1000 9700 50  0001 C CNN
+	1    1000 9700
+	-1   0    0    1   
+$EndComp
 $EndSCHEMATC

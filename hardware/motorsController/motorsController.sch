@@ -402,4 +402,53 @@ Text HLabel 14600 1750 2    50   Output ~ 0
 motor_left_front_fwd
 Text HLabel 14600 2050 2    50   Output ~ 0
 motor_left_front_back
+Text GLabel 1200 9700 2    50   Input ~ 0
+i2c_scl
+Text GLabel 1200 9600 2    50   Input ~ 0
+i2c_sda
+$Comp
+L power:+5V #PWR0121
+U 1 1 5FAD9AB3
+P 1450 9450
+F 0 "#PWR0121" H 1450 9300 50  0001 C CNN
+F 1 "+5V" H 1465 9623 50  0000 C CNN
+F 2 "" H 1450 9450 50  0001 C CNN
+F 3 "" H 1450 9450 50  0001 C CNN
+	1    1450 9450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1450 9450 1450 9500
+Wire Wire Line
+	1450 9500 1200 9500
+$Comp
+L power:GND #PWR0122
+U 1 1 5FADB6FB
+P 1450 9850
+F 0 "#PWR0122" H 1450 9600 50  0001 C CNN
+F 1 "GND" H 1455 9677 50  0000 C CNN
+F 2 "" H 1450 9850 50  0001 C CNN
+F 3 "" H 1450 9850 50  0001 C CNN
+	1    1450 9850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1450 9850 1450 9800
+Wire Wire Line
+	1450 9800 1200 9800
+Text GLabel 12000 2150 0    50   Output ~ 0
+i2c_scl
+Text GLabel 12000 2250 0    50   Output ~ 0
+i2c_sda
+$Comp
+L Connector_Generic:Conn_01x04 J11
+U 1 1 5FAD5301
+P 1000 9700
+F 0 "J11" H 918 9275 50  0000 C CNN
+F 1 "Conn_01x04" H 918 9366 50  0000 C CNN
+F 2 "Connector_PinHeader_1.00mm:PinHeader_1x04_P1.00mm_Vertical" H 1000 9700 50  0001 C CNN
+F 3 "~" H 1000 9700 50  0001 C CNN
+	1    1000 9700
+	-1   0    0    1   
+$EndComp
 $EndSCHEMATC
