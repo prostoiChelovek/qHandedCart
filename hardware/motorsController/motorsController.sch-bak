@@ -3,7 +3,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A3 16535 11693
 encoding utf-8
-Sheet 1 5
+Sheet 1 6
 Title ""
 Date ""
 Rev ""
@@ -451,4 +451,10 @@ F 3 "~" H 1000 9700 50  0001 C CNN
 	1    1000 9700
 	-1   0    0    1   
 $EndComp
+$Sheet
+S 1300 6400 1500 950 
+U 5FB03879
+F0 "front_right_encoder" 50
+F1 "front_right_encoder.sch" 50
+$EndSheet
 $EndSCHEMATC
