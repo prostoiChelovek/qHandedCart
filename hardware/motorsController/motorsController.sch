@@ -59,16 +59,16 @@ motor_right_front_diag_a
 $Comp
 L power:GND #PWR0105
 U 1 1 5F7FA8F7
-P 11700 5200
-F 0 "#PWR0105" H 11700 4950 50  0001 C CNN
-F 1 "GND" H 11705 5027 50  0000 C CNN
-F 2 "" H 11700 5200 50  0001 C CNN
-F 3 "" H 11700 5200 50  0001 C CNN
-	1    11700 5200
+P 11700 5300
+F 0 "#PWR0105" H 11700 5050 50  0001 C CNN
+F 1 "GND" H 11705 5127 50  0000 C CNN
+F 2 "" H 11700 5300 50  0001 C CNN
+F 3 "" H 11700 5300 50  0001 C CNN
+	1    11700 5300
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	11700 5200 11700 5150
+	11700 5300 11700 5150
 Wire Wire Line
 	11700 5150 12000 5150
 $Comp
@@ -446,7 +446,7 @@ U 1 1 5FAD5301
 P 1000 9700
 F 0 "J11" H 918 9275 50  0000 C CNN
 F 1 "Conn_01x04" H 918 9366 50  0000 C CNN
-F 2 "Connector_PinHeader_1.00mm:PinHeader_1x04_P1.00mm_Vertical" H 1000 9700 50  0001 C CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_1x04_P2.54mm_Vertical" H 1000 9700 50  0001 C CNN
 F 3 "~" H 1000 9700 50  0001 C CNN
 	1    1000 9700
 	-1   0    0    1   
@@ -458,4 +458,23 @@ F0 "front_right_encoder" 50
 F1 "front_right_encoder.sch" 50
 F2 "out" O R 2750 7250 50 
 $EndSheet
+$Comp
+L power:+3.3V #PWR0128
+U 1 1 5FBBD825
+P 11600 5200
+F 0 "#PWR0128" H 11600 5050 50  0001 C CNN
+F 1 "+3.3V" H 11615 5373 50  0000 C CNN
+F 2 "" H 11600 5200 50  0001 C CNN
+F 3 "" H 11600 5200 50  0001 C CNN
+	1    11600 5200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	11600 5200 11600 5250
+Wire Wire Line
+	11600 5250 12000 5250
+Text HLabel 2750 7250 2    50   Output ~ 0
+front_right_encoder
+Text HLabel 14600 3450 2    50   Input ~ 0
+front_right_encoder
 $EndSCHEMATC
