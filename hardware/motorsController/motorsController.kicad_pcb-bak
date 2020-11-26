@@ -2,7 +2,7 @@
 
   (general
     (thickness 1.6)
-    (drawings 0)
+    (drawings 4)
     (tracks 702)
     (zones 0)
     (modules 76)
@@ -3622,6 +3622,11 @@
       (rotate (xyz 0 0 0))
     )
   )
+
+  (gr_line (start 210.058 24.13) (end 210.058 83.439) (layer Edge.Cuts) (width 0.1))
+  (gr_line (start 33.147 24.13) (end 210.058 24.13) (layer Edge.Cuts) (width 0.1))
+  (gr_line (start 33.147 83.439) (end 33.147 24.13) (layer Edge.Cuts) (width 0.1))
+  (gr_line (start 210.058 83.439) (end 33.147 83.439) (layer Edge.Cuts) (width 0.1))
 
   (segment (start 40.405 46.53) (end 40.405 44.53) (width 0.4) (layer F.Cu) (net 1))
   (segment (start 40.405 54.53) (end 40.405 52.53) (width 0.4) (layer F.Cu) (net 1))
