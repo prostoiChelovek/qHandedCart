@@ -1,0 +1,171 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 6 6
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L Device:LED D1
+U 1 1 5FB0A7B2
+P 1700 2350
+F 0 "D1" V 1739 2232 50  0000 R CNN
+F 1 "LED" V 1648 2232 50  0000 R CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_1x02_P2.54mm_Vertical" H 1700 2350 50  0001 C CNN
+F 3 "~" H 1700 2350 50  0001 C CNN
+	1    1700 2350
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:Q_Photo_NPN Q1
+U 1 1 5FB0A7B8
+P 2250 2350
+F 0 "Q1" H 2550 2300 50  0000 R CNN
+F 1 "Q_Photo_NPN" H 2950 2400 50  0000 R CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_1x02_P2.54mm_Vertical" H 2450 2450 50  0001 C CNN
+F 3 "~" H 2250 2350 50  0001 C CNN
+	1    2250 2350
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0123
+U 1 1 5FB0A7BE
+P 1700 2550
+F 0 "#PWR0123" H 1700 2300 50  0001 C CNN
+F 1 "GND" H 1705 2377 50  0000 C CNN
+F 2 "" H 1700 2550 50  0001 C CNN
+F 3 "" H 1700 2550 50  0001 C CNN
+	1    1700 2550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1700 2550 1700 2500
+$Comp
+L power:+3V3 #PWR0124
+U 1 1 5FB0A7C5
+P 1700 2150
+F 0 "#PWR0124" H 1700 2000 50  0001 C CNN
+F 1 "+3V3" H 1715 2323 50  0000 C CNN
+F 2 "" H 1700 2150 50  0001 C CNN
+F 3 "" H 1700 2150 50  0001 C CNN
+	1    1700 2150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1700 2150 1700 2200
+$Comp
+L power:GND #PWR0125
+U 1 1 5FB0A7CC
+P 2350 2600
+F 0 "#PWR0125" H 2350 2350 50  0001 C CNN
+F 1 "GND" H 2355 2427 50  0000 C CNN
+F 2 "" H 2350 2600 50  0001 C CNN
+F 3 "" H 2350 2600 50  0001 C CNN
+	1    2350 2600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2350 2600 2350 2550
+$Comp
+L Device:C_Small C?
+U 1 1 5FB0A7D3
+P 3500 2250
+AR Path="/5FB0A7D3" Ref="C?"  Part="1" 
+AR Path="/5FB03879/5FB0A7D3" Ref="C5"  Part="1" 
+F 0 "C5" H 3592 2296 50  0000 L CNN
+F 1 "300pF" H 3592 2205 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric" H 3500 2250 50  0001 C CNN
+F 3 "~" H 3500 2250 50  0001 C CNN
+	1    3500 2250
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_Small R?
+U 1 1 5FB0A7D9
+P 3250 2100
+AR Path="/5FB0A7D9" Ref="R?"  Part="1" 
+AR Path="/5FB03879/5FB0A7D9" Ref="R29"  Part="1" 
+F 0 "R29" V 3054 2100 50  0000 C CNN
+F 1 "2M" V 3145 2100 50  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" H 3250 2100 50  0001 C CNN
+F 3 "~" H 3250 2100 50  0001 C CNN
+	1    3250 2100
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	3350 2100 3500 2100
+Wire Wire Line
+	3500 2100 3500 2150
+$Comp
+L power:GND #PWR0126
+U 1 1 5FB0B2E6
+P 3500 2400
+F 0 "#PWR0126" H 3500 2150 50  0001 C CNN
+F 1 "GND" H 3505 2227 50  0000 C CNN
+F 2 "" H 3500 2400 50  0001 C CNN
+F 3 "" H 3500 2400 50  0001 C CNN
+	1    3500 2400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3500 2400 3500 2350
+Text HLabel 4150 2100 2    50   Output ~ 0
+out
+Wire Wire Line
+	2350 2150 2350 2100
+Wire Wire Line
+	2350 2100 3150 2100
+$Comp
+L Device:C_Small C6
+U 1 1 5FB0F088
+P 3750 2100
+F 0 "C6" V 3521 2100 50  0000 C CNN
+F 1 "82nF" V 3612 2100 50  0000 C CNN
+F 2 "Capacitor_SMD:C_1206_3216Metric" H 3750 2100 50  0001 C CNN
+F 3 "~" H 3750 2100 50  0001 C CNN
+	1    3750 2100
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	3650 2100 3500 2100
+Connection ~ 3500 2100
+$Comp
+L Device:R_Small R30
+U 1 1 5FB110C4
+P 4000 2250
+F 0 "R30" H 4059 2296 50  0000 L CNN
+F 1 "2M" H 4059 2205 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" H 4000 2250 50  0001 C CNN
+F 3 "~" H 4000 2250 50  0001 C CNN
+	1    4000 2250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4000 2150 4000 2100
+Wire Wire Line
+	4000 2100 3850 2100
+Wire Wire Line
+	4150 2100 4000 2100
+Connection ~ 4000 2100
+$Comp
+L power:GND #PWR0127
+U 1 1 5FB12EE4
+P 4000 2400
+F 0 "#PWR0127" H 4000 2150 50  0001 C CNN
+F 1 "GND" H 4005 2227 50  0000 C CNN
+F 2 "" H 4000 2400 50  0001 C CNN
+F 3 "" H 4000 2400 50  0001 C CNN
+	1    4000 2400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4000 2400 4000 2350
+$EndSCHEMATC
