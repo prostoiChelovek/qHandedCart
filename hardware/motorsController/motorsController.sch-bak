@@ -3,7 +3,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A3 16535 11693
 encoding utf-8
-Sheet 1 6
+Sheet 1 7
 Title ""
 Date ""
 Rev ""
@@ -459,10 +459,10 @@ F1 "front_right_encoder.sch" 50
 F2 "out" O R 2750 7250 50 
 $EndSheet
 $Comp
-L power:+3.3V #PWR?
+L power:+3.3V #PWR0128
 U 1 1 5FBBD825
 P 11600 5200
-F 0 "#PWR?" H 11600 5050 50  0001 C CNN
+F 0 "#PWR0128" H 11600 5050 50  0001 C CNN
 F 1 "+3.3V" H 11615 5373 50  0000 C CNN
 F 2 "" H 11600 5200 50  0001 C CNN
 F 3 "" H 11600 5200 50  0001 C CNN
@@ -473,4 +473,19 @@ Wire Wire Line
 	11600 5200 11600 5250
 Wire Wire Line
 	11600 5250 12000 5250
+Text HLabel 2750 7250 2    50   Output ~ 0
+front_right_encoder
+Text HLabel 14600 3450 2    50   Input ~ 0
+front_right_encoder
+$Sheet
+S 3650 6400 1500 950 
+U 5FBFC472
+F0 "front_left_encoder" 50
+F1 "front_right_encoder.sch" 50
+F2 "out" O R 5150 7250 50 
+$EndSheet
+Text HLabel 5150 7250 2    50   Output ~ 0
+front_left_encoder
+Text HLabel 14600 3650 2    50   Input ~ 0
+front_left_encoder
 $EndSCHEMATC

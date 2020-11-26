@@ -3,7 +3,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A3 16535 11693
 encoding utf-8
-Sheet 1 6
+Sheet 1 9
 Title ""
 Date ""
 Rev ""
@@ -477,4 +477,37 @@ Text HLabel 2750 7250 2    50   Output ~ 0
 front_right_encoder
 Text HLabel 14600 3450 2    50   Input ~ 0
 front_right_encoder
+$Sheet
+S 3650 6400 1500 950 
+U 5FBFC472
+F0 "front_left_encoder" 50
+F1 "front_right_encoder.sch" 50
+F2 "out" O R 5150 7250 50 
+$EndSheet
+Text HLabel 5150 7250 2    50   Output ~ 0
+front_left_encoder
+Text HLabel 14600 3650 2    50   Input ~ 0
+front_left_encoder
+$Sheet
+S 1250 7750 1500 950 
+U 5FC04BEE
+F0 "rear_right_encoder" 50
+F1 "front_right_encoder.sch" 50
+F2 "out" O R 2750 8600 50 
+$EndSheet
+Text HLabel 2750 8600 2    50   Output ~ 0
+rear_right_encoder
+$Sheet
+S 3650 7750 1500 950 
+U 5FC04BF2
+F0 "rear_left_encoder" 50
+F1 "front_right_encoder.sch" 50
+F2 "out" O R 5150 8600 50 
+$EndSheet
+Text HLabel 5150 8600 2    50   Output ~ 0
+rear_left_encoder
+Text HLabel 14600 3850 2    50   Input ~ 0
+rear_right_encoder
+Text HLabel 14600 4050 2    50   Input ~ 0
+rear_left_encoder
 $EndSCHEMATC
