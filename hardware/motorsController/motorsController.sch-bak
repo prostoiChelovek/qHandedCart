@@ -510,4 +510,104 @@ Text HLabel 14600 3850 2    50   Input ~ 0
 rear_right_encoder
 Text HLabel 14600 4050 2    50   Input ~ 0
 rear_left_encoder
+$Comp
+L Device:LED D?
+U 1 1 5FC19CB9
+P 3600 9650
+F 0 "D?" V 3547 9730 50  0000 L CNN
+F 1 "LED" V 3638 9730 50  0000 L CNN
+F 2 "" H 3600 9650 50  0001 C CNN
+F 3 "~" H 3600 9650 50  0001 C CNN
+	1    3600 9650
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:LED D?
+U 1 1 5FC1D350
+P 4050 9650
+F 0 "D?" V 3997 9730 50  0000 L CNN
+F 1 "LED" V 4088 9730 50  0000 L CNN
+F 2 "" H 4050 9650 50  0001 C CNN
+F 3 "~" H 4050 9650 50  0001 C CNN
+	1    4050 9650
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:LED D?
+U 1 1 5FC1DB12
+P 4500 9650
+F 0 "D?" V 4447 9730 50  0000 L CNN
+F 1 "LED" V 4538 9730 50  0000 L CNN
+F 2 "" H 4500 9650 50  0001 C CNN
+F 3 "~" H 4500 9650 50  0001 C CNN
+	1    4500 9650
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:LED D?
+U 1 1 5FC1E600
+P 4950 9650
+F 0 "D?" V 4897 9730 50  0000 L CNN
+F 1 "LED" V 4988 9730 50  0000 L CNN
+F 2 "" H 4950 9650 50  0001 C CNN
+F 3 "~" H 4950 9650 50  0001 C CNN
+	1    4950 9650
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	3600 9500 3600 9450
+Wire Wire Line
+	4950 9450 4950 9500
+Wire Wire Line
+	4500 9500 4500 9450
+Wire Wire Line
+	4050 9500 4050 9450
+Wire Wire Line
+	3600 9800 3600 9850
+Wire Wire Line
+	3600 9850 4050 9850
+Wire Wire Line
+	4950 9850 4950 9800
+Wire Wire Line
+	4500 9850 4500 9800
+Connection ~ 4500 9850
+Wire Wire Line
+	4500 9850 4950 9850
+Wire Wire Line
+	4050 9800 4050 9850
+Connection ~ 4050 9850
+Wire Wire Line
+	4050 9850 4250 9850
+$Comp
+L power:GND #PWR?
+U 1 1 5FC28A45
+P 4250 9900
+F 0 "#PWR?" H 4250 9650 50  0001 C CNN
+F 1 "GND" H 4255 9727 50  0000 C CNN
+F 2 "" H 4250 9900 50  0001 C CNN
+F 3 "" H 4250 9900 50  0001 C CNN
+	1    4250 9900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4250 9900 4250 9850
+Connection ~ 4250 9850
+Wire Wire Line
+	4250 9850 4500 9850
+Text HLabel 4950 9450 1    50   Input ~ 0
+led_1
+Text HLabel 4500 9450 1    50   Input ~ 0
+led_2
+Text HLabel 4050 9450 1    50   Input ~ 0
+led_3
+Text HLabel 3600 9450 1    50   Input ~ 0
+led_4
+Text HLabel 14600 4150 2    50   Output ~ 0
+led_1
+Text HLabel 14600 4550 2    50   Output ~ 0
+led_3
+Text HLabel 14600 4750 2    50   Output ~ 0
+led_4
+Text HLabel 14600 4350 2    50   Output ~ 0
+led_2
 $EndSCHEMATC
