@@ -17,3 +17,6 @@
 # Autorouter files (exported from Pcbnew)
 /hardware/**/*.dsn
 /hardware/**/*.ses
+
+# Blender
+**/*.blend1
