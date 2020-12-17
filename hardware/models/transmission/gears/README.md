@@ -1,6 +1,7 @@
 ## Hypoid gears
 These gears were made in Blender 2.78 (coz idk how the heck do i make some stuff work in the newest version), 
 according to [the tutorial from Otvinta](https://youtu.be/wWn9gYwnONk), using [their online calculator](http://www.otvinta.com/hypoid.html).  
+The gears turned out to be twice as large than needed somehow, so you need to scale them later in slicer  
 
 The parameters are:  
 
