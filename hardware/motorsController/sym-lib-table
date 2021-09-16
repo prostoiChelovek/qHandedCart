@@ -1,3 +1,4 @@
 (sym_lib_table
-  (lib (name arduino)(type Legacy)(uri ${KIPRJMOD}/libs/arduino-kicad-library/arduino.lib)(options "")(descr ""))
+  (lib (name IRF540NSTRLPBF)(type Legacy)(uri ${KIPRJMOD}/libs/IRF540NSTRLPBF/IRF540NSTRLPBF.lib)(options "")(descr ""))
+  (lib (name eec)(type Legacy)(uri ${KIPRJMOD}/libs/FAN3100TSX/eec.lib)(options "")(descr ""))
 )
