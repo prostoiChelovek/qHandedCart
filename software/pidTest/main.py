@@ -64,6 +64,6 @@ print(x)
 print(y)
 
 fig, axs = plt.subplots(2)
-axs[0].plot(x,y)
+axs[0].plot(x, y)
 axs[1].plot(x, yc)
 plt.show()
