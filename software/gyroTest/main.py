@@ -6,7 +6,7 @@ import board
 import adafruit_adxl34x
 
 i2c = board.I2C()  # uses board.SCL and board.SDA
-
+print(dir(adafruit_adxl34x))
 # For ADXL343
 accelerometer = adafruit_adxl34x.ADXL343(i2c)
 # For ADXL345
