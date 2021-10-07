@@ -18,6 +18,7 @@ accelerometer.enable_motion_detection()
 
 while True:
     print("%f %f %f" % accelerometer.acceleration)
-
+    print(dir(accelerometer))
+    break
     print("Motion detected: %s" % accelerometer.events["motion"])
     time.sleep(0.5)
