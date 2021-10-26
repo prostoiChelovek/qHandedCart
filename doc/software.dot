@@ -15,12 +15,7 @@ digraph software {
 
     wheel [label = "Контроллер колеса"]
 
-    {
-        rank = same
-
-        chassis [label = "Контроллер шасси"]
-        odometry [label = "Модуль одометрии"]
-    }
+    chassis [label = "Контроллер шасси"]
 
     {
         rank = same
@@ -33,10 +28,7 @@ digraph software {
 
     chassis -> wheel
 
-    odometry -> {accelerometer_driver, encoder_driver}
-
     path_follower -> {accelerometer_driver, path_planner, chassis}
 
     path_planner -> camera:nw
-    path_planner -> odometry
 }
