@@ -29,5 +29,8 @@ class Path:
     def parse(d: List[PointTpl]) -> Path:
         return Path(list(map(Point.parse, d)))
 
+    def __eq__(self, o: Path) -> bool:
+        return self._nodes == o._nodes
+
     def __iter__(self):
         return map(lambda x: Line(*x), window(self._nodes, 2))
