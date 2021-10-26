@@ -20,5 +20,12 @@ class Line:
     def slope(self) -> float:
         return (self.a.x - self.b.x) / (self.a.y - self.b.y)
 
+    def __iter__(self):
+        for x in (self.a, self.b):
+            yield x
+
+    def __eq__(self, o: Line) -> bool:
+        return tuple(self) == tuple(o)
+
     def __str__(self) -> str:
         return f"{{{self.a} -- {self.b}}}"
