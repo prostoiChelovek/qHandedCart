@@ -1,4 +1,4 @@
-from .path import Path
+from .Path import Path
 
 path = Path.parse([
     (0, 0), (1, 1),
