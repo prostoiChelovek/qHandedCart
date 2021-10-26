@@ -1,34 +1,46 @@
-from typing import Callable, Tuple
 from dataclasses import dataclass
 from enum import IntEnum, Enum, auto
 
 from . import Motor
-
-MotorsPair = Tuple[Motor, Motor]
+from . import SynchronizedMotors
 
 
 @dataclass
 class ChassisMotors:
+    class Side(Enum):
+        LEFT = auto()
+        RIGHT = auto()
+
     front_left: Motor
     front_right: Motor
     rear_left: Motor
     rear_right: Motor
 
     @property
-    def left(self) -> MotorsPair:
-        return (self.front_left, self.rear_left)
+    def left(self) -> SynchronizedMotors:
+        return SynchronizedMotors((self.front_left, self.rear_left))
 
     @property
-    def right(self) -> MotorsPair:
-        return (self.front_right, self.rear_right)
+    def right(self) -> SynchronizedMotors:
+        return SynchronizedMotors((self.front_right, self.rear_right))
 
     @property
-    def front(self) -> MotorsPair:
-        return (self.front_left, self.front_right)
+    def front(self) -> SynchronizedMotors:
+        return SynchronizedMotors((self.front_left, self.front_right))
 
     @property
-    def rear(self) -> MotorsPair:
-        return (self.rear_left, self.rear_right)
+    def rear(self) -> SynchronizedMotors:
+        return SynchronizedMotors((self.rear_left, self.rear_right))
+
+    @property
+    def all(self) -> SynchronizedMotors:
+        return SynchronizedMotors(tuple(self))
+
+    def __getitem__(self, side: Side) -> SynchronizedMotors:
+        return {
+                ChassisMotors.Side.LEFT: self.left,
+                ChassisMotors.Side.RIGHT: self.right,
+            }[side]
 
     def __iter__(self):
         for x in (
