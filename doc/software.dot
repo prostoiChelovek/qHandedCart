@@ -17,6 +17,8 @@ digraph software {
     wheel [label = "Контроллер колеса"]
     chassis [label = "Контроллер шасси"]
 
+    odometry [label = "Модуль одометрии"]
+
     path_planner [label = "Планировщик пути"]
     path_follower [label = "Контроллер следования пути"]
 
@@ -26,9 +28,13 @@ digraph software {
 
     chassis -> wheel
 
+    accelerometer_driver -> odometry
+    encoder_driver -> odometry
+
     accelerometer_driver -> path_follower
     path_planner -> path_follower
     path_follower -> chassis
 
+    odometry -> path_planner
     camera -> path_planner
 }
