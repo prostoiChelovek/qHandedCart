@@ -14,24 +14,29 @@ digraph software {
     motor_driver [label = "Драйвер двигателя" color = red]
 
     wheel [label = "Контроллер колеса"]
-    chassis [label = "Контроллер шасси"]
 
-    odometry [label = "Модуль одометрии"]
+    {
+        rank = same
 
-    path_planner [label = "Планировщик пути"]
-    path_follower [label = "Контроллер следования пути"]
+        chassis [label = "Контроллер шасси"]
+        odometry [label = "Модуль одометрии"]
+    }
 
-    wheel -> encoder_driver
-    wheel -> motor_driver:ne
+    {
+        rank = same
+
+        path_planner [label = "Планировщик пути"]
+        path_follower [label = "Контроллер следования пути"]
+    }
+
+    wheel -> {encoder_driver, motor_driver}
 
     chassis -> wheel
 
-    odometry -> accelerometer_driver
-    odometry -> encoder_driver:ne
+    odometry -> {accelerometer_driver, encoder_driver}
 
-    path_follower -> accelerometer_driver
-    path_follower -> path_planner
-    path_follower -> chassis
+    path_follower -> {accelerometer_driver, path_planner, chassis}
 
-    path_planner -> {camera, odometry}
+    path_planner -> camera:nw
+    path_planner -> odometry
 }
