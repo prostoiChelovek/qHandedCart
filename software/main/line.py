@@ -6,6 +6,7 @@ from .point import Point, PointTpl
 
 LineTpl = Tuple[PointTpl, PointTpl]
 
+
 class Line:
     def __init__(self, a: Point, b: Point) -> None:
         self.a = a
@@ -18,3 +19,6 @@ class Line:
     @property
     def slope(self) -> float:
         return (self.a.x - self.b.x) / (self.a.y - self.b.y)
+
+    def __str__(self) -> str:
+        return f"{{{self.a} -- {self.b}}}"
