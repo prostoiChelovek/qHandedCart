@@ -30,11 +30,4 @@ class Path:
         return Path(list(map(Point.parse, d)))
 
     def __iter__(self):
-        return self
-
-    def __next__(self):
-        print(123)
-        for (a, b) in window(self._nodes, 2):
-            print(a, b)
-            yield Line(a, b)
-
+        return map(lambda x: Line(*x), window(self._nodes, 2))

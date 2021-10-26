@@ -1,10 +1,9 @@
 from .path import Path
 
 path = Path.parse([
-    (0, 0), (1, 1), (2, 3)
+    (0, 0), (1, 1),
+    (2, 3), (4, 6)
     ])
 
-print(next(path))
-
-#for s in path:
-    #print(s)
+for s in path:
+    print(s)
