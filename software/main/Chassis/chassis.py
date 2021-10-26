@@ -53,10 +53,6 @@ class ChassisMotors:
 
 
 class Chassis:
-    class Side(Enum):
-        LEFT = auto()
-        RIGHT = auto()
-
     class Direction(IntEnum):
         BACKWARD = -1
         FORWARD = 1
@@ -69,38 +65,23 @@ class Chassis:
 
         self._motors = motors
 
-    def stop(self, side: Side) -> None:
-        self._call_on_side(side, Motor.stop)
+    def stop(self, side: ChassisMotors.Side) -> None:
+        self._motors[side].stop()
 
-    def set_speed(self, side: Side, speed: int) -> None:
-        self._call_on_side(side, Motor.set_speed, speed)
+    def set_speed(self, side: ChassisMotors.Side, speed: int) -> None:
+        self._motors[side].set_speed(speed)
 
-    def set_direction(self, side: Side, direction: Direction) -> None:
+    def set_direction(self, side: ChassisMotors.Side,
+                      direction: Direction) -> None:
         motor_direction = self.direction_map[direction]
-        self._call_on_side(side, Motor.set_direction, motor_direction)
+        self._motors[side].set_direction(motor_direction)
 
     def stop_all(self) -> None:
-        self._call_on_all(Motor.stop)
+        self._motors.all.stop()
 
     def set_speed_all(self, speed: int):
-        self._call_on_all(Motor.set_speed, speed)
+        self._motors.all.set_speed(speed)
 
     def set_direction_all(self, direction: Direction) -> None:
         motor_direction = self.direction_map[direction]
-        self._call_on_all(Motor.set_direction, motor_direction)
-
-    def _get_side_motors(self, side: Side) -> MotorsPair:
-        return {
-                Chassis.Side.LEFT: self._motors.left,
-                Chassis.Side.RIGHT: self._motors.right,
-            }[side]
-
-    def _call_on_side(self, side: Side, method: Callable,
-                      *args, **kwargs) -> None:
-        for m in self._get_side_motors(side):
-            method(m, *args, **kwargs)
-
-    def _call_on_all(self, method: Callable,
-                     *args, **kwargs) -> None:
-        for m in self._motors:
-            method(m, *args, **kwargs)
+        self._motors.all.set_direction(motor_direction)
