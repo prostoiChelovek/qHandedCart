@@ -2,11 +2,15 @@ digraph software {
     graph [ splines = ortho ]
     node [ shape = box ]
 
-    encoder_driver [label = "Драйвер энкодера"]
-    accelerometer_driver [label = "Драйвер акселерометра"]
-    camera [label = "Камера"]
+    {
+        node [color = blue]
 
-    motor_driver [label = "Драйвер двигателя"]
+        encoder_driver [label = "Драйвер энкодера"]
+        accelerometer_driver [label = "Драйвер акселерометра"]
+        camera [label = "Камера"]
+    }
+
+    motor_driver [label = "Драйвер двигателя" color = red]
 
     speed_controller [label = "Контроллер скорости"]
 
