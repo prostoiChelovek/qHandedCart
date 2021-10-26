@@ -14,6 +14,9 @@ class Point:
     def parse(tpl: PointTpl) -> Point:
         return Point(*tpl)
 
+    def __sub__(self, o: Point) -> Point:
+        return Point(self.x - o.x, self.y - o.y)
+
     def __iter__(self):
         for x in (self.x, self.y):
             yield x

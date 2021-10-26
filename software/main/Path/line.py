@@ -20,6 +20,9 @@ class Line:
     def slope(self) -> float:
         return (self.a.x - self.b.x) / (self.a.y - self.b.y)
 
+    def __sub__(self, o: Line) -> Line:
+        return Line(self.a - o.a, self.b - o.b)
+
     def __iter__(self):
         for x in (self.a, self.b):
             yield x
