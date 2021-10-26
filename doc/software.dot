@@ -5,16 +5,42 @@ digraph software {
     {
         node [color = blue]
 
-        encoder_driver [label = "Драйвер энкодера"]
+        front_left_encoder_driver [label = "Драйвер энкодера"]
+        front_right_encoder_driver [label = "Драйвер энкодера"]
+        rear_left_encoder_driver [label = "Драйвер энкодера"]
+        rear_right_encoder_driver [label = "Драйвер энкодера"]
+
         accelerometer_driver [label = "Драйвер акселерометра"]
         camera [label = "Камера"]
     }
 
-    motor_driver [label = "Драйвер двигателя" color = red]
+    {
+        rank = same
 
-    speed_controller [label = "Контроллер скорости"]
+        front_left_motor_driver [label = "Драйвер двигателя" color = red]
+        front_right_motor_driver [label = "Драйвер двигателя" color = red]
+        rear_left_motor_driver [label = "Драйвер двигателя" color = red]
+        rear_right_motor_driver [label = "Драйвер двигателя" color = red]
+    }
 
-    wheel [label = "Контроллер колеса"]
+    {
+        rank = same
+
+        front_left_speed_controller [label = "Контроллер скорости"]
+        front_right_speed_controller [label = "Контроллер скорости"]
+        rear_left_speed_controller [label = "Контроллер скорости"]
+        rear_right_speed_controller [label = "Контроллер скорости"]
+    }
+
+    {
+        rank = same
+
+        front_left_wheel [label = "Контроллер колеса"]
+        front_right_wheel [label = "Контроллер колеса"]
+        rear_left_wheel [label = "Контроллер колеса"]
+        rear_right_wheel [label = "Контроллер колеса"]
+    }
+
     chassis [label = "Контроллер шасси"]
 
     odometry [label = "Модуль одометрии"]
@@ -22,14 +48,35 @@ digraph software {
     path_planner [label = "Планировщик пути"]
     path_follower [label = "Контроллер следования пути"]
 
-    encoder_driver -> speed_controller
-    speed_controller -> motor_driver
-    wheel -> speed_controller
+    front_left_encoder_driver -> front_left_speed_controller
+    front_right_encoder_driver -> front_right_speed_controller
+    rear_left_encoder_driver -> rear_left_speed_controller
+    rear_right_encoder_driver -> rear_right_speed_controller
 
-    chassis -> wheel
+    front_left_speed_controller -> front_left_motor_driver
+    front_right_speed_controller -> front_right_motor_driver
+    rear_left_speed_controller -> rear_left_motor_driver
+    rear_right_speed_controller -> rear_right_motor_driver
+
+    front_left_wheel -> front_left_speed_controller
+    front_right_wheel -> front_right_speed_controller
+    rear_left_wheel -> rear_left_speed_controller
+    rear_right_wheel -> rear_right_speed_controller
+
+    chassis -> {
+        front_left_wheel,
+        front_right_wheel,
+        rear_left_wheel,
+        rear_right_wheel
+        }
 
     accelerometer_driver -> odometry
-    encoder_driver -> odometry
+    {
+        front_left_encoder_driver,
+        front_right_encoder_driver,
+        rear_left_encoder_driver,
+        rear_right_encoder_driver
+        } -> odometry
 
     accelerometer_driver -> path_follower
     path_planner -> path_follower
