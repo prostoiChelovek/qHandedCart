@@ -12,8 +12,6 @@ digraph software {
 
     motor_driver [label = "Драйвер двигателя" color = red]
 
-    speed_controller [label = "Контроллер скорости"]
-
     wheel [label = "Контроллер колеса"]
     chassis [label = "Контроллер шасси"]
 
@@ -22,9 +20,8 @@ digraph software {
     path_planner [label = "Планировщик пути"]
     path_follower [label = "Контроллер следования пути"]
 
-    encoder_driver -> speed_controller
-    speed_controller -> motor_driver
-    wheel -> speed_controller
+    encoder_driver -> wheel
+    wheel -> motor_driver
 
     chassis -> wheel
 
