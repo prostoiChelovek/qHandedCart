@@ -1,0 +1,28 @@
+digraph software {
+    graph [ splines = ortho ]
+    node [ shape = box ]
+
+    {
+        rank = same
+
+        encoder_driver [label = "Драйвер энкодера"]
+        accelerometer_driver [label = "Драйвер акселерометра"]
+        camera [label = "Камера"]
+    }
+
+    motor_driver [label = "Драйвер двигателя"]
+
+    wheel[label = "Контроллер колеса"]
+    chassis [label = "Контроллер шасси"]
+
+    path_planner [label = "Планировщик пути"]
+    path_follower [label = "Контроллер следования пути"]
+
+    encoder_driver -> wheel
+    wheel -> motor_driver
+    chassis -> wheel
+
+    camera -> path_planner
+    {path_planner, accelerometer_driver} -> path_follower
+    path_follower -> chassis
+}
