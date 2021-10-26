@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import math
 from typing import Tuple
 
 from .point import Point, PointTpl
@@ -18,7 +19,12 @@ class Line:
 
     @property
     def slope(self) -> float:
-        return (self.a.x - self.b.x) / (self.a.y - self.b.y)
+        delta = self.a - self.b
+
+        if delta.x == 0:
+            return math.inf
+
+        return delta.y / delta.x
 
     def __sub__(self, o: Line) -> Line:
         return Line(self.a - o.a, self.b - o.b)
