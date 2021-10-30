@@ -9,11 +9,15 @@ digraph software {
         encoder_driver [label = "Драйвер энкодера"]
         accelerometer_driver [label = "Драйвер акселерометра"]
         camera [label = "Камера"]
+
+        motor_driver [label = "Драйвер двигателя" color = red]
     }
 
-    motor_driver [label = "Драйвер двигателя" color = red]
-
     wheel [label = "Контроллер колеса"]
+
+    encoder_odometry [label = "Одометрия по энкодерам"]
+    accelerometer_odometry [label = "Одометрия по акселерометру"]
+    odometry [label = "Модуль одометрии"]
 
     chassis [label = "Контроллер шасси"]
 
@@ -26,9 +30,13 @@ digraph software {
 
     wheel -> {encoder_driver, motor_driver}
 
-    chassis -> wheel
+    encoder_odometry -> encoder_driver
+    accelerometer_odometry -> accelerometer_driver
+    odometry -> {encoder_odometry, accelerometer_odometry}
 
-    path_follower -> {accelerometer_driver, path_planner, chassis}
+    chassis -> {wheel, odometry}
+
+    path_follower -> {odometry, path_planner, chassis}
 
     path_planner -> camera:nw
 }
