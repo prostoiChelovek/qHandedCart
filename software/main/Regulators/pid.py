@@ -1,16 +1,21 @@
-class Pid:
-    def __init__(self, p, i, d, target):
+from numbers import Real
+
+from . import Regulator
+
+
+class Pid(Regulator):
+    def __init__(self, p, i, d):
         self.i = i
         self.p = p
         self.d = d
 
-        self.target = target
+        self._target = 0
 
         self._last_error = 0
         self._Ie = 0
 
-    def compute(self, current):
-        e = self.target - current
+    def compute(self, actual: Real) -> Real:
+        e = self._target - actual
 
         de = e - self._last_error
         self._Ie += e
@@ -20,7 +25,7 @@ class Pid:
              + self.i * self._Ie \
              + self.d * de
 
-    def __str__(self):
+    def __str__(self) -> str:
         params = f"P: {self.p}, I: {self.i}, D: {self.d}"
-        state = f"target: {self.target}, last_error: {self._last_error}, Ie: {self._Ie}"
+        state = f"target: {self._target}, last_error: {self._last_error}, Ie: {self._Ie}"
         return f"PID: {{\n\t{params}\n\t{state}\n}}"
