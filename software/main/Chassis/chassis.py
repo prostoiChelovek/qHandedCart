@@ -1,7 +1,7 @@
 from dataclasses import dataclass
 from enum import IntEnum, Enum, auto
 
-from . import Motor
+from ..Drivers.Base import Motor
 from . import SynchronizedMotors
 
 

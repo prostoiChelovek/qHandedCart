@@ -1,6 +1,6 @@
 from typing import Iterable
 
-from . import Motor
+from ..Drivers.Base import Motor
 
 
 class SynchronizedMotors(Motor):
