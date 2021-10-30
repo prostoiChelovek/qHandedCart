@@ -1,5 +1,3 @@
 (fp_lib_table
   (lib (name IRF540NSTRLPBF)(type KiCad)(uri ${KIPRJMOD}/libs/IRF540NSTRLPBF)(options "")(descr ""))
-  (lib (name eec)(type KiCad)(uri ${KIPRJMOD}/libs/FAN3100TSX/eec.pretty)(options "")(descr ""))
-  (lib (name IRS2453DSPBF)(type KiCad)(uri ${KIPRJMOD}/libs/IRS2453DSPBF/IRS2453DSPBF.pretty)(options "")(descr ""))
 )
