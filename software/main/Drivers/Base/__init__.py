@@ -1,5 +1,5 @@
-from . import accelerometer
+from . import accelerometer, encoder
 
 __all__ = [
-        "accelerometer"
+        "accelerometer", "encoder"
         ]
