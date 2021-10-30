@@ -39,4 +39,6 @@ digraph software {
     path_follower -> {odometry, path_planner, chassis}
 
     path_planner -> camera:nw
+
+    {encoder_odometry, accelerometer_odometry} -> wheel [style = invis]
 }
