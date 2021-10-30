@@ -1,5 +1,6 @@
-from .accelerometer import Acceleration, Accelerometer
+from . import Base
+from .Base.accelerometer import Acceleration
 
 __all__ = [
-        "Acceleration", "Accelerometer"
+        "Base", "Acceleration"
         ]
