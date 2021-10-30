@@ -1,6 +1,6 @@
 from .wheel import Wheel
-from .synchronized_motors import SynchronizedMotors
+from .synchronized_motors import SynchronizedWheels
 
 __all__ = [
-        "Wheel", "SynchronizedMotors"
+        "Wheel", "SynchronizedWheels"
         ]
