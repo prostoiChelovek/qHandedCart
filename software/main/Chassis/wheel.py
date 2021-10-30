@@ -17,6 +17,12 @@ class Wheel:
     def set_direction(self, direction: Motor.Direction) -> None:
         self.motor.set_direction(direction)
 
+    def stop(self) -> None:
+        # TODO: вероятно, это не лучший вариант
+
+        self.set_speed(0)
+        self.motor.stop()
+
     def update(self) -> None:
         actual_speed = self.actual_speed
         regulation = self.regulator.compute(actual_speed)
