@@ -1,4 +1,4 @@
-from .Regulator import Regulator
+from .regulator import Regulator
 from .pid import Pid
 
 __all__ = [
