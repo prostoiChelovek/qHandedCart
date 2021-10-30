@@ -1,5 +1,3 @@
-from numbers import Real
-
 from . import Regulator
 
 
@@ -14,7 +12,7 @@ class Pid(Regulator):
         self._last_error = 0
         self._Ie = 0
 
-    def compute(self, actual: Real) -> Real:
+    def compute(self, actual: float) -> float:
         e = self._target - actual
 
         de = e - self._last_error
