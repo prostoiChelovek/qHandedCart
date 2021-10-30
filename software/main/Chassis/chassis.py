@@ -2,44 +2,44 @@ from dataclasses import dataclass
 from enum import IntEnum, Enum, auto
 
 from ..Drivers.Base import Motor
-from . import SynchronizedMotors
+from . import Wheel, SynchronizedWheels
 
 
 @dataclass
-class ChassisMotors:
+class ChassisWheels:
     class Side(Enum):
         LEFT = auto()
         RIGHT = auto()
 
-    front_left: Motor
-    front_right: Motor
-    rear_left: Motor
-    rear_right: Motor
+    front_left: Wheel
+    front_right: Wheel
+    rear_left: Wheel
+    rear_right: Wheel
 
     @property
-    def left(self) -> SynchronizedMotors:
-        return SynchronizedMotors((self.front_left, self.rear_left))
+    def left(self) -> SynchronizedWheels:
+        return SynchronizedWheels((self.front_left, self.rear_left))
 
     @property
-    def right(self) -> SynchronizedMotors:
-        return SynchronizedMotors((self.front_right, self.rear_right))
+    def right(self) -> SynchronizedWheels:
+        return SynchronizedWheels((self.front_right, self.rear_right))
 
     @property
-    def front(self) -> SynchronizedMotors:
-        return SynchronizedMotors((self.front_left, self.front_right))
+    def front(self) -> SynchronizedWheels:
+        return SynchronizedWheels((self.front_left, self.front_right))
 
     @property
-    def rear(self) -> SynchronizedMotors:
-        return SynchronizedMotors((self.rear_left, self.rear_right))
+    def rear(self) -> SynchronizedWheels:
+        return SynchronizedWheels((self.rear_left, self.rear_right))
 
     @property
-    def all(self) -> SynchronizedMotors:
-        return SynchronizedMotors(tuple(self))
+    def all(self) -> SynchronizedWheels:
+        return SynchronizedWheels(tuple(self))
 
-    def __getitem__(self, side: Side) -> SynchronizedMotors:
+    def __getitem__(self, side: Side) -> SynchronizedWheels:
         return {
-                ChassisMotors.Side.LEFT: self.left,
-                ChassisMotors.Side.RIGHT: self.right,
+                ChassisWheels.Side.LEFT: self.left,
+                ChassisWheels.Side.RIGHT: self.right,
             }[side]
 
     def __iter__(self):
@@ -57,31 +57,34 @@ class Chassis:
         BACKWARD = -1
         FORWARD = 1
 
-    def __init__(self, motors: ChassisMotors) -> None:
+    def __init__(self, wheels: ChassisWheels) -> None:
         self.direction_map = {
                 Chassis.Direction.FORWARD: Motor.Direction.CLOCKWISE,
                 Chassis.Direction.BACKWARD: Motor.Direction.COUNTERCLOCKWISE,
                 }
 
-        self._motors = motors
+        self._wheels = wheels
 
-    def stop(self, side: ChassisMotors.Side) -> None:
-        self._motors[side].stop()
+    def stop(self, side: ChassisWheels.Side) -> None:
+        self._wheels[side].stop()
 
-    def set_speed(self, side: ChassisMotors.Side, speed: int) -> None:
-        self._motors[side].set_speed(speed)
+    def set_speed(self, side: ChassisWheels.Side, speed: int) -> None:
+        self._wheels[side].set_speed(speed)
 
-    def set_direction(self, side: ChassisMotors.Side,
+    def set_direction(self, side: ChassisWheels.Side,
                       direction: Direction) -> None:
-        motor_direction = self.direction_map[direction]
-        self._motors[side].set_direction(motor_direction)
+        real_direction = self.direction_map[direction]
+        self._wheels[side].set_direction(real_direction)
 
     def stop_all(self) -> None:
-        self._motors.all.stop()
+        self._wheels.all.stop()
 
     def set_speed_all(self, speed: int):
-        self._motors.all.set_speed(speed)
+        self._wheels.all.set_speed(speed)
 
     def set_direction_all(self, direction: Direction) -> None:
-        motor_direction = self.direction_map[direction]
-        self._motors.all.set_direction(motor_direction)
+        real_direction = self.direction_map[direction]
+        self._wheels.all.set_direction(real_direction)
+
+    def update(self) -> None:
+        self._wheels.all.update()
