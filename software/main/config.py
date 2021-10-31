@@ -7,7 +7,7 @@ class Configurable:
     def get_config(self) -> object:
         base = getattr(self, "Config", object)
         configurable_fields = filter(lambda x: issubclass(type(x[1]), Configurable), self.__dict__.items())
-        fields = map(lambda x: (x[0], x[1].get_config()), configurable_fields)
+        fields = list(map(lambda x: (x[0].strip("_"), x[1].get_config()), configurable_fields))
         Config = make_dataclass("Config", fields, bases=(base,))
         return Config
     
