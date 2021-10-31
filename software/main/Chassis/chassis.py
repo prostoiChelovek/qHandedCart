@@ -16,11 +16,7 @@ class Chassis:
 
     @dataclass
     class Config:
-        direction_map: Dict[Chassis.Direction, Motor.Direction] \
-            = field(default_factory=lambda: {
-                Chassis.Direction.FORWARD: Motor.Direction.CLOCKWISE,
-                Chassis.Direction.BACKWARD: Motor.Direction.COUNTERCLOCKWISE,
-            })
+        direction_map: Dict[Chassis.Direction, Motor.Direction]
 
     def __init__(self, wheels: ChassisWheels, odometry: Odometry, config: Chassis.Config) -> None:
         self.cfg = config
