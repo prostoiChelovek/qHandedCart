@@ -1,13 +1,11 @@
 from dataclasses import dataclass
 
-from coqpit import Coqpit
-
 from . import Regulator
 
 
 class Pid(Regulator):
     @dataclass
-    class Config(Coqpit):
+    class Config:
         p: float = 1
         i: float = 1
         d: float = 1
