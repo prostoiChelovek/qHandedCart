@@ -1,4 +1,8 @@
+from __future__ import annotations
+
+from dataclasses import dataclass, field
 from enum import IntEnum
+from typing import Dict
 
 from . import ChassisWheels
 from ..Odometry import Odometry
@@ -10,11 +14,16 @@ class Chassis:
         BACKWARD = -1
         FORWARD = 1
 
-    def __init__(self, wheels: ChassisWheels, odometry: Odometry) -> None:
-        self.direction_map = {
+    @dataclass
+    class Config:
+        direction_map: Dict[Chassis.Direction, Motor.Direction] \
+            = field(default_factory=lambda: {
                 Chassis.Direction.FORWARD: Motor.Direction.CLOCKWISE,
                 Chassis.Direction.BACKWARD: Motor.Direction.COUNTERCLOCKWISE,
-                }
+            })
+
+    def __init__(self, wheels: ChassisWheels, odometry: Odometry, config: Chassis.Config) -> None:
+        self.cfg = config
 
         self._wheels = wheels
         self._odometry = odometry
@@ -27,7 +36,7 @@ class Chassis:
 
     def set_direction(self, side: ChassisWheels.Side,
                       direction: Direction) -> None:
-        real_direction = self.direction_map[direction]
+        real_direction = self.cfg.direction_map[direction]
         self._wheels[side].set_direction(real_direction)
 
     def stop_all(self) -> None:
@@ -37,7 +46,7 @@ class Chassis:
         self._wheels.all.set_speed(speed)
 
     def set_direction_all(self, direction: Direction) -> None:
-        real_direction = self.direction_map[direction]
+        real_direction = self.cfg.direction_map[direction]
         self._wheels.all.set_direction(real_direction)
 
     def update(self) -> None:
