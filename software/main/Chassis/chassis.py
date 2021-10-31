@@ -1,6 +1,7 @@
 from enum import IntEnum
 
 from . import ChassisWheels
+from ..Odometry import Odometry
 from ..Drivers.Base import Motor
 
 
@@ -9,13 +10,14 @@ class Chassis:
         BACKWARD = -1
         FORWARD = 1
 
-    def __init__(self, wheels: ChassisWheels) -> None:
+    def __init__(self, wheels: ChassisWheels, odometry: Odometry) -> None:
         self.direction_map = {
                 Chassis.Direction.FORWARD: Motor.Direction.CLOCKWISE,
                 Chassis.Direction.BACKWARD: Motor.Direction.COUNTERCLOCKWISE,
                 }
 
         self._wheels = wheels
+        self._odometry = odometry
 
     def stop(self, side: ChassisWheels.Side) -> None:
         self._wheels[side].stop()
@@ -40,3 +42,4 @@ class Chassis:
 
     def update(self) -> None:
         self._wheels.all.update()
+        self._odometry.update()
