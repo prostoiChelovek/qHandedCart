@@ -1,11 +1,19 @@
+from dataclasses import dataclass
+
+from coqpit import Coqpit
+
 from . import Regulator
 
 
 class Pid(Regulator):
-    def __init__(self, p, i, d):
-        self.i = i
-        self.p = p
-        self.d = d
+    @dataclass
+    class Config(Coqpit):
+        p: float = 1
+        i: float = 1
+        d: float = 1
+
+    def __init__(self, cfg: Config) -> None:
+        self.cfg = cfg
 
         self._target = 0
 
@@ -23,9 +31,9 @@ class Pid(Regulator):
         self._Ie += e
         self._last_error = e
 
-        return self.p * e \
-             + self.i * self._Ie \
-             + self.d * de
+        return self.cfg.p * e \
+             + self.cfg.i * self._Ie \
+             + self.cfg.d * de
 
     def __str__(self) -> str:
         params = f"P: {self.p}, I: {self.i}, D: {self.d}"
