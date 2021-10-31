@@ -1,3 +1,4 @@
 (fp_lib_table
   (lib (name IRF540NSTRLPBF)(type KiCad)(uri ${KIPRJMOD}/libs/IRF540NSTRLPBF)(options "")(descr ""))
+  (lib (name ILD207T)(type KiCad)(uri ${KIPRJMOD}/libs/ILD207T/eec.pretty)(options "")(descr ""))
 )

@@ -1,3 +1,5 @@
 (sym_lib_table
   (lib (name IRF540NSTRLPBF)(type Legacy)(uri ${KIPRJMOD}/libs/IRF540NSTRLPBF/IRF540NSTRLPBF.lib)(options "")(descr ""))
+  (lib (name custom)(type Legacy)(uri ${KIPRJMOD}/libs/custom.lib)(options "")(descr ""))
+  (lib (name ILD207T)(type Legacy)(uri ${KIPRJMOD}/libs/ILD207T/eec.lib)(options "")(descr ""))
 )
