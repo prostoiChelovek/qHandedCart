@@ -1,11 +1,12 @@
 from dataclasses import dataclass
-from enum import IntEnum, Enum, auto
+from enum import Enum, auto
 
 from . import Wheel, SynchronizedWheels
+from ..config import Configurable
 
 
 @dataclass
-class ChassisWheels:
+class ChassisWheels(Configurable):
     class Side(Enum):
         LEFT = auto()
         RIGHT = auto()

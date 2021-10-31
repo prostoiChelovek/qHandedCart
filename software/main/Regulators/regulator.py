@@ -1,7 +1,9 @@
 from abc import ABC, abstractmethod
 
+from ..config import Configurable
 
-class Regulator(ABC):
+
+class Regulator(Configurable, ABC):
     @abstractmethod
     def set_target(self, target: float) -> None:
         pass

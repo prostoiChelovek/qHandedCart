@@ -7,9 +7,10 @@ from typing import Dict
 from . import ChassisWheels
 from ..Odometry import Odometry
 from ..Drivers.Base import Motor
+from ..config import Configurable
 
 
-class Chassis:
+class Chassis(Configurable):
     class Direction(IntEnum):
         BACKWARD = -1
         FORWARD = 1

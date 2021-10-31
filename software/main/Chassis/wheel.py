@@ -1,8 +1,9 @@
+from ..config import Configurable
 from ..Drivers.Base import Motor, Encoder
 from ..Regulators import Regulator
 
 
-class Wheel:
+class Wheel(Configurable):
     def __init__(self,
                  motor: Motor,
                  encoder: Encoder,
