@@ -12,6 +12,10 @@ class Pid(Regulator):
         self._last_error = 0
         self._Ie = 0
 
+    def set_target(self, target: float) -> None:
+        # TODO: is this enough?
+        self._target = target
+
     def compute(self, actual: float) -> float:
         e = self._target - actual
 
