@@ -1,38 +1,30 @@
+from unum import units
+
 from ..config import Configurable
-from ..Drivers.Base import Motor, Encoder
 from ..Regulators import Regulator
+from . import WheelEncoder, WheelMotor
 
 
 class Wheel(Configurable):
     def __init__(self,
-                 motor: Motor,
-                 encoder: Encoder,
+                 motor: WheelMotor,
+                 encoder: WheelEncoder,
                  regulator: Regulator) -> None:
         self.motor = motor
         self.encoder = encoder
         self.regulator = regulator
 
-    def set_speed(self, speed: int) -> None:
+    def set_speed(self, speed: units.m / units.s) -> None:
         self.regulator.set_target(speed)
-
-    def set_direction(self, direction: Motor.Direction) -> None:
-        self.motor.set_direction(direction)
 
     def stop(self) -> None:
         # TODO: вероятно, это не лучший вариант
 
         self.set_speed(0)
-        self.motor.stop()
 
     def update(self) -> None:
-        actual_speed = self.actual_speed
-        regulation = self.regulator.compute(actual_speed)
+        actual_speed = self.encoder.get()
+        regulation: (units.m / units.s) = self.regulator.compute(actual_speed)
 
-        new_speed = self.motor.speed + round(regulation)
+        new_speed = self.motor.speed + round(regulation.asNumber())
         self.motor.set_speed(new_speed)
-
-    @property
-    def actual_speed(self) -> float:
-        encoder_data = self.encoder.get()
-
-        return encoder_data.ticks / encoder_data.time_delta.total_seconds()
