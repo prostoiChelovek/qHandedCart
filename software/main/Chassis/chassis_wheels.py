@@ -1,7 +1,7 @@
 from dataclasses import dataclass
 from enum import Enum, auto
 
-from . import Wheel, SynchronizedWheels
+from ..Wheel import Wheel, SynchronizedWheels
 from ..config import Configurable
 
 
