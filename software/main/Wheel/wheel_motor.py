@@ -17,7 +17,11 @@ class WheelMotor:
 
         self._motor = motor
 
+        self.__speed: units.m / units.s = 0
+
     def set_speed(self, speed: units.m / units.s) -> None:
+        self.__speed = speed
+
         if speed < 0:
             self._motor.set_direction(Motor.Direction.COUNTERCLOCKWISE)
         elif speed > 0:
@@ -31,4 +35,5 @@ class WheelMotor:
 
     @property
     def speed(self) -> units.m / units.s:
-        return  self.cfg.max_speed / 100 * self._motor.speed
+        # TODO: значение верно токльо если мотором никто больше не управляет
+        return self.__speed
