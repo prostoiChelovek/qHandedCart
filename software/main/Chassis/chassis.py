@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 from enum import IntEnum
 from typing import Dict
 
@@ -8,6 +8,7 @@ from . import ChassisWheels
 from ..Odometry import Odometry
 from ..Drivers.Base import Motor
 from ..config import Configurable
+from .. import mps
 
 
 class Chassis(Configurable):
@@ -25,26 +26,12 @@ class Chassis(Configurable):
         self._wheels = wheels
         self._odometry = odometry
 
-    def stop(self, side: ChassisWheels.Side) -> None:
-        self._wheels[side].stop()
 
-    def set_speed(self, side: ChassisWheels.Side, speed: int) -> None:
+    def set_speed(self, side: ChassisWheels.Side, speed: mps) -> None:
         self._wheels[side].set_speed(speed)
 
-    def set_direction(self, side: ChassisWheels.Side,
-                      direction: Direction) -> None:
-        real_direction = self.cfg.direction_map[direction]
-        self._wheels[side].set_direction(real_direction)
-
-    def stop_all(self) -> None:
-        self._wheels.all.stop()
-
-    def set_speed_all(self, speed: int):
+    def set_speed_all(self, speed: mps):
         self._wheels.all.set_speed(speed)
-
-    def set_direction_all(self, direction: Direction) -> None:
-        real_direction = self.cfg.direction_map[direction]
-        self._wheels.all.set_direction(real_direction)
 
     def update(self) -> None:
         self._wheels.all.update()
