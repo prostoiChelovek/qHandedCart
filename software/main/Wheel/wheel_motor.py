@@ -18,7 +18,15 @@ class WheelMotor:
         self._motor = motor
 
     def set_speed(self, speed: units.m / units.s) -> None:
-        percent = round(speed / self.cfg.max_speed * 100)
+        if speed < 0:
+            self._motor.set_direction(Motor.Direction.COUNTERCLOCKWISE)
+        elif speed > 0:
+            self._motor.set_direction(Motor.Direction.CLOCKWISE)
+        else:
+            self._motor.stop()
+            return
+
+        percent = round(abs(speed) / self.cfg.max_speed * 100)
         self._motor.set_speed(percent)
 
     @property
