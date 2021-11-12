@@ -6,7 +6,6 @@ from abc import ABC, abstractmethod
 class Acceleration:
     x: float
     y: float
-    z: float
 
 
 class Accelerometer(ABC):

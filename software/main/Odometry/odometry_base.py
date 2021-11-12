@@ -10,14 +10,12 @@ from ..kinematics import Velocity
 class Translation:
     x: units.m
     y: units.m
-    z: units.m
 
 
 @dataclass
 class Rotation:
     x: units.deg
     y: units.deg
-    z: units.deg
 
 
 @dataclass
