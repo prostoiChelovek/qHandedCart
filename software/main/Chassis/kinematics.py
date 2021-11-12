@@ -28,6 +28,21 @@ class Velocity:
     linear: mps
     angular: radps
 
+    def __neg__(self) -> Velocity:
+        return Velocity(-self.linear, -self.angular)
+
+    def __add__(self, o: Velocity) -> Velocity:
+        return Velocity(self.linear + o.angular, self.angular + o.angular)
+    __iadd__ = __add__
+
+    def __sub__(self, o: Velocity) -> Velocity:
+        return self + (-o)
+    __isub__ = __sub__
+
+    def __mul__(self, o: float) -> Velocity:
+        return Velocity(self.linear * o, self.angular * o)
+    __rmul__ = __mul__
+
 
 class Kinematics(Configurable):
     @dataclass
