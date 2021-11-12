@@ -2,11 +2,13 @@ from __future__ import annotations
 
 from typing import Tuple
 
-PointTpl = Tuple[int, int]
+from unum import units
+
+PointTpl = Tuple[units.m, units.m]
 
 
 class Point:
-    def __init__(self, x, y) -> None:
+    def __init__(self, x: units.m, y: units.m) -> None:
         self.x = x
         self.y = y
 
