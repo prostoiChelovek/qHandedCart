@@ -29,33 +29,29 @@ class Velocity:
     angular: radps
 
 
-class KinematicsBase(Configurable):
+class Kinematics(Configurable):
     @dataclass
     class Config:
         wheel_radius: units.m
         base_length: units.m
 
-    def __init__(self, cfg: KinematicsBase.Config) -> None:
+    def __init__(self, cfg: Kinematics.Config) -> None:
         super().__init__()
 
         self.cfg = cfg
 
-
-class Forward(KinematicsBase):
-    def velocity(self, velocities: WheelsVelocity) -> Velocity:
+    def forward(self, velocities: WheelsVelocity) -> Velocity:
         return Velocity(
                 linear = (self.cfg.wheel_radius / 2) * velocities.sum,
                 angular = (self.cfg.wheel_radius / self.cfg.base_length) * velocities.diff
                 )
 
-
-class Inverse(KinematicsBase):
-    def wheel_velocities(self, velocity: Velocity) -> WheelsVelocity:
+    def inverse(self, velocity: Velocity) -> WheelsVelocity:
         return WheelsVelocity(
-                right = self._calc(velocity, 1),
-                left = self._calc(velocity, -1),
+                right = self.__inverse_calc(velocity, 1),
+                left = self.__inverse_calc(velocity, -1),
                 )
     
-    def _calc(self, velocity: Velocity, sign: int) -> mps:
+    def __inverse_calc(self, velocity: Velocity, sign: int) -> mps:
         return (2 * velocity.linear + (sign * velocity.angular * self.cfg.base_length)) \
              / (2 * self.cfg.wheel_radius)

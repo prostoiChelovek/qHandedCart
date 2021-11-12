@@ -1,7 +1,9 @@
 from .chassis_wheels import ChassisWheels
-from . import kinematics
+from .kinematics import Velocity, WheelsVelocity, Kinematics
 from .chassis import Chassis
 
 __all__ = [
-        "ChassisWheels", "kinematics", "Chassis"
+        "ChassisWheels",
+        "Velocity", "WheelsVelocity", "Kinematics",
+        "Chassis"
         ]
