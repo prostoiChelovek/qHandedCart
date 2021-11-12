@@ -1,49 +1,27 @@
 from __future__ import annotations
 
-from dataclasses import dataclass
-from enum import IntEnum
-from typing import Dict
-
 from . import ChassisWheels
 from . import WheelsVelocity, Velocity, Kinematics
 from ..Odometry import Odometry
-from ..Drivers.Base import Motor
 from ..Regulators import Regulator
 from ..config import Configurable
-from .. import mps
 
 
 class Chassis(Configurable):
-    class Direction(IntEnum):
-        BACKWARD = -1
-        FORWARD = 1
-
-    @dataclass
-    class Config:
-        direction_map: Dict[Chassis.Direction, Motor.Direction]
-
-    def __init__(self, wheels: ChassisWheels,
+    def __init__(self,
+                 wheels: ChassisWheels,
                  odometry: Odometry,
                  regulator: Regulator,
-                 config: Chassis.Config) -> None:
-        self.cfg = config
-
+                 kinematics: Kinematics) -> None:
         self._wheels = wheels
         self._odometry = odometry
         self._regulator = regulator
-
-        self._kinematics = Kinematics(self.cfg.kinematics)
+        self._kinematics = kinematics
 
         self.__velocity = Velocity(0, 0)
 
     def set_velocity(self, velocity: Velocity) -> None:
         self._regulator.set_target(velocity)
-
-    def set_speed(self, side: ChassisWheels.Side, speed: mps) -> None:
-        self._wheels[side].set_speed(speed)
-
-    def set_speed_all(self, speed: mps):
-        self._wheels.all.set_speed(speed)
 
     def update(self) -> None:
         self._wheels.all.update()
