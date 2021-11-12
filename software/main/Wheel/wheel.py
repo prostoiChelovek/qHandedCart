@@ -18,11 +18,6 @@ class Wheel(Configurable):
     def set_speed(self, speed: mps) -> None:
         self.regulator.set_target(speed)
 
-    def stop(self) -> None:
-        # TODO: вероятно, это не лучший вариант
-
-        self.set_speed(0)
-
     def update(self) -> None:
         actual_speed = self.encoder.get()
         regulation: mps = self.regulator.compute(actual_speed)
