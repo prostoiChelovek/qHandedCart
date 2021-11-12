@@ -2,6 +2,7 @@ from unum import units
 
 from ..config import Configurable
 from ..Regulators import Regulator
+from .. import mps
 from . import WheelEncoder, WheelMotor
 
 
@@ -14,7 +15,7 @@ class Wheel(Configurable):
         self.encoder = encoder
         self.regulator = regulator
 
-    def set_speed(self, speed: units.m / units.s) -> None:
+    def set_speed(self, speed: mps) -> None:
         self.regulator.set_target(speed)
 
     def stop(self) -> None:
@@ -24,7 +25,7 @@ class Wheel(Configurable):
 
     def update(self) -> None:
         actual_speed = self.encoder.get()
-        regulation: (units.m / units.s) = self.regulator.compute(actual_speed)
+        regulation: mps = self.regulator.compute(actual_speed)
 
         new_speed = self.motor.speed + round(regulation.asNumber())
         self.motor.set_speed(new_speed)

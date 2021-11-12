@@ -7,6 +7,7 @@ from unum import units
 
 from ..config import Configurable
 from ..Drivers.Base import Encoder
+from .. import mps
 
 
 class WheelEncoder(Configurable):
@@ -20,7 +21,7 @@ class WheelEncoder(Configurable):
 
         self._encoder = encoder
 
-    def get(self) -> units.m / units.s:
+    def get(self) -> mps:
         encoder_data = self._encoder.get()
         linear_distance = encoder_data.ticks * self.pulses_per_m
         return linear_distance / encoder_data.seconds

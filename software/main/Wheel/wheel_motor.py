@@ -5,21 +5,22 @@ from dataclasses import dataclass
 from unum import units
 
 from ..Drivers.Base import Motor
+from .. import mps
 
 
 class WheelMotor:
     @dataclass
     class Config:
-        max_speed: units.m / units.s
+        max_speed: mps
 
     def __init__(self, motor: Motor, cfg: WheelMotor.Config) -> None:
         self.cfg = cfg
 
         self._motor = motor
 
-        self.__speed: units.m / units.s = 0
+        self.__speed: mps = 0
 
-    def set_speed(self, speed: units.m / units.s) -> None:
+    def set_speed(self, speed: mps) -> None:
         self.__speed = speed
 
         if speed < 0:
@@ -34,6 +35,6 @@ class WheelMotor:
         self._motor.set_speed(percent)
 
     @property
-    def speed(self) -> units.m / units.s:
+    def speed(self) -> mps:
         # TODO: значение верно токльо если мотором никто больше не управляет
         return self.__speed
