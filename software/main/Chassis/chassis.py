@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from . import ChassisWheels
-from . import WheelsVelocity, Velocity, Kinematics
+from ..kinematics import WheelsVelocity, Velocity, Kinematics
 from ..Odometry import Odometry
 from ..Regulators import Regulator
 from ..config import Configurable

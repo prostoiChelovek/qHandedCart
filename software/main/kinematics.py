@@ -4,8 +4,8 @@ from dataclasses import dataclass
 
 from unum import units
 
-from .. import mps, radps
-from ..config import Configurable
+from . import mps, radps
+from .config import Configurable
 
 # based on https://youtu.be/aE7RQNhwnPQ
 
