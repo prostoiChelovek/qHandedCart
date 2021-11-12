@@ -3,6 +3,8 @@ from abc import ABC, abstractmethod
 
 import unum.units as units
 
+from ..kinematics import Velocity
+
 
 @dataclass
 class Translation:
@@ -29,6 +31,12 @@ class Odometry(ABC):
     def update(self) -> None:
         pass
 
+    @property
     @abstractmethod
-    def get(self) -> Position:
+    def position(self) -> Position:
+        pass
+
+    @property
+    @abstractmethod
+    def velocity(self) -> Velocity:
         pass
