@@ -3,13 +3,8 @@ from abc import ABC, abstractmethod
 
 import unum.units as units
 
+from ..Path import Point
 from ..kinematics import Velocity
-
-
-@dataclass
-class Translation:
-    x: units.m
-    y: units.m
 
 
 @dataclass
@@ -20,7 +15,7 @@ class Rotation:
 
 @dataclass
 class Position:
-    translation: Translation
+    translation: Point
     rotation: Rotation
 
 
