@@ -27,7 +27,7 @@ class Chassis(Configurable):
         self._wheels.all.update()
         self._odometry.update()
 
-        actual_velocity = self.velocity
+        actual_velocity = self._odometry.velocity
         regulation: Velocity = self._regulator.compute(actual_velocity)
         new_velocity = self.__velocity + regulation
         self._apply_velocity(new_velocity)
@@ -38,10 +38,6 @@ class Chassis(Configurable):
         wheels_velocity = self._kinematics.inverse(velocity)
         self._wheels.left.set_speed(wheels_velocity.left)
         self._wheels.right.set_speed(wheels_velocity.right)
-
-    @property
-    def velocity(self) -> Velocity:
-        return self._kinematics.forward(self.wheels_velocity)
 
     @property
     def wheels_velocity(self) -> WheelsVelocity:
