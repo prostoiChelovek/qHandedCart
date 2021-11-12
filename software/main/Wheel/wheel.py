@@ -19,8 +19,12 @@ class Wheel(Configurable):
         self.regulator.set_target(speed)
 
     def update(self) -> None:
-        actual_speed = self.encoder.get()
+        actual_speed = self.speed
         regulation: mps = self.regulator.compute(actual_speed)
 
         new_speed = self.motor.speed + round(regulation.asNumber())
         self.motor.set_speed(new_speed)
+    
+    @property
+    def speed(self) -> mps:
+        return self.encoder.get()
