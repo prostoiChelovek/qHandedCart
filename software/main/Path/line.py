@@ -3,6 +3,8 @@ from __future__ import annotations
 import math
 from typing import Tuple
 
+from unum import units
+
 from .point import Point, PointTpl
 
 LineTpl = Tuple[PointTpl, PointTpl]
@@ -25,6 +27,10 @@ class Line:
             return math.inf
 
         return delta.y / delta.x
+
+    @property
+    def angle(self) -> units.rad:
+        return math.atan(self.slope) * units.rad
 
     def __sub__(self, o: Line) -> Line:
         return Line(self.a - o.a, self.b - o.b)
