@@ -32,6 +32,11 @@ class Line:
     def angle(self) -> units.rad:
         return math.atan(self.slope) * units.rad
 
+    @property
+    def length(self) -> units.m:
+        delta = self.b - self.a
+        return math.sqrt((delta.x ** 2 + delta.y ** 2).asNumber()) * units.m
+
     def __sub__(self, o: Line) -> Line:
         return Line(self.a - o.a, self.b - o.b)
 
