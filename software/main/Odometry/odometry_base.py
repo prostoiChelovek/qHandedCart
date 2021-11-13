@@ -8,15 +8,9 @@ from ..kinematics import Velocity
 
 
 @dataclass
-class Rotation:
-    x: units.deg
-    y: units.deg
-
-
-@dataclass
 class Position:
     translation: Point
-    rotation: Rotation
+    rotation: units.rad
 
 
 class Odometry(ABC):
