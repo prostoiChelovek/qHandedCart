@@ -5,6 +5,7 @@ from typing import Optional, Dict
 from abc import ABC, abstractmethod
 
 from ..Odometry import Position
+from ..Path import Line
 from ..kinematics import Velocity
 
 from .steering_controller import SteeringController
@@ -54,6 +55,19 @@ class SteeringInplaceStage(SteeringStage):
         self._controller._chassis.set_velocity(self.__last_velocity)
 
 
+class CourseEnteringStage(SteeringInplaceStage):
+    def set_target(self, target: Position) -> None:
+        current_pos = self._controller._odometry.position
+        line = Line(current_pos.translation, target.translation)
+
+        target = Position(
+                target.translation,
+                line.angle
+                )
+
+        return super().set_target(target)
+
+
 class LineFollowingStage(SteeringStage):
     def set_target(self, target: Position) -> None:
         self._controller.set_target(target)
@@ -66,7 +80,7 @@ class SteeringStages:
         FinalSteering = auto()
 
     stage_wrappers = {
-            Stage.CourseEntering: SteeringInplaceStage,
+            Stage.CourseEntering: CourseEnteringStage,
             Stage.LineFollowing: LineFollowingStage,
             Stage.FinalSteering: SteeringInplaceStage
             }
