@@ -40,5 +40,9 @@ class Chassis(Configurable):
         self._wheels.right.set_speed(wheels_velocity.right)
 
     @property
+    def velocity(self) -> Velocity:
+        return self.__velocity
+
+    @property
     def wheels_velocity(self) -> WheelsVelocity:
         return WheelsVelocity(self._wheels.left.speed, self._wheels.right.speed)
